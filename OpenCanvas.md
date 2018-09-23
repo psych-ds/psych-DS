@@ -1,5 +1,3 @@
-
-
 ---
 title: "Get Started"
 output: flexdashboard::flex_dashboard
@@ -7,6 +5,7 @@ output: flexdashboard::flex_dashboard
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+plot(mtcars)
 ```
 
 # Canvas!
