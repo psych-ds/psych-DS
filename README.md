@@ -1,2 +1,13 @@
 # psych-DS
-A specification for psychological (and maybe other social science?) datasets - JSON metadata, predictable directory structure, and specifications for tabular datasets
+
+- ENTRY FRIENDLY intro to project goes here
+
+# Ground rules/code of conduct
+
+# What is in here
+
+- Link to Google draft
+
+# Roadmap
+
+- TBA
