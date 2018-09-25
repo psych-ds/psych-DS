@@ -1,6 +1,6 @@
 # psych-DS
 
-Welcome to the Psych Data Structures project! (Maybe we'll have a snappier name in the future.) This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It incorporates a few types of existing recommendations for organizing our work (well-formatted spreadsheets, data dictionaries, and sensible folder structure) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. Some advantages of having a techincal specification:
+Welcome to the Psych Data Structures project! (Maybe we'll have a snappier name in the future.) This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at SIPS 2018. The Data Structure incorporates a few types of existing recommendations for organizing our work (well-formatted spreadsheets, data dictionaries, and sensible folder structure) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. Some advantages of having a techincal specification:
 
 * From the beginning of a project, a researcher can format their data in a way that is likely to make their life easy for data analysis & management, and which will be easy to document and share.
 
@@ -31,7 +31,21 @@ Things we will need to have in the future:
 
 # Roadmap
 
-- TBA
+Some significant milestones:
+
+- Release a prototype specification that researchers can try to meet on a dataset; call for feedback and/or example datasets.
+  
+Doing this requires that we have a stable enough metadata schema/directory structure, and a list of instructions for how people should prepare and submit a dataset to us.
+
+- Version 1.0 Launch! In addition to the above:
+
+-- A polished webpage
+
+-- Curated examples of datasets to spec (for developers, and for researchers looking for examples)
+
+-- Edited instruction documents (especially if we can point people to tools that make preparation easier.)
+
+-- What else?
 
 # How to Get Involved
 
