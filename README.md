@@ -12,9 +12,22 @@ This is an ongoing project, and we are actively looking for contributors! (See H
 
 # Ground rules/code of conduct
 
+We haven't yet adopted a formal code of conduct, but please see the [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct) (which has been adopted by a number of open source projects) for general expectations. Please contact Melissa (mekline@mit.edu) if you have any concerns.
 
-# What is in here
+# Project Documents
 
+This repository serves as the root/entry point for the Psych-DS project, but most project docs and discussions are elsewhere. 
+
+[Draft Technical Specification](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) - this is the main document we are working on.
+[OpenCanvas](https://docs.google.com/presentation/d/1GQUpUPL3dHGc-Eb_3dL6WcXnA4hXpUanjAc8jUp16S0/edit?usp=sharing) - a basic definition/roadmap for the project (constructed for the Mozilla Open Leaders workshop and open for comment!)
+
+Things we will need to have in the future:
+
+- A website!
+
+- Example datasets. We are not quite ready to start road-testing the specification on datasets, but when we do, examples of your datasets from across subfields, methods, populations, and measurement types will be critical for making sure this works for its intended audience!
+
+- (Please add to this list)
 
 # Roadmap
 
@@ -22,4 +35,6 @@ This is an ongoing project, and we are actively looking for contributors! (See H
 
 # How to Get Involved
 
-Right now, discussions about this project take place via comments/edits to the (technical specification draft)[https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing] and on the (mailing list)[https://groups.google.com/forum/#!forum/psych-data-standards]. Please also feel free to contact me (Melissa Kline, mekline@mit.edu) if you have further questions.
+Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards). 
+
+Please also feel free to contact me (Melissa Kline, mekline@mit.edu) if you have further questions.
