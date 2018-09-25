@@ -1,6 +1,10 @@
 # psych-DS
 
-Welcome to the Psych Data Structures project! (Maybe we'll have a snappier name in the future.) This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at SIPS 2018. The Data Structure incorporates a few types of existing recommendations for organizing our work (well-formatted spreadsheets, data dictionaries, and sensible folder structure) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. Some advantages of having a techincal specification:
+Welcome to the Psych Data Structures project! (Maybe we'll have a snappier name in the future.) This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at SIPS 2018. The Data Structure incorporates a few types of existing recommendations for organizing our work (well-formatted spreadsheets, data dictionaries, and sensible folder structure) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. 
+
+The page you are reading right now shows the advantage of having a technical spec - across many programming languages and contexts, programmers have agreed to use a file named README (with no file extension, or in this case, [Markdown](https://en.wikipedia.org/wiki/Markdown)) to describe what a project is about to a human who wants to learn about it.  Because this is a widely adopted and specific convention, a website like GitHub can support new features - when you put a file named README at the top of a repository, GitHub assumes it is the description of the project, and displays it nicely below the repository files. (This is really a raw text document, which you can see by clicking on the link to README.md.)
+
+## Some advantages of having a technical specification for our datasets:
 
 * From the beginning of a project, a researcher can format their data in a way that is likely to make their life easy for data analysis & management, and which will be easy to document and share.
 
@@ -19,6 +23,7 @@ We haven't yet adopted a formal code of conduct, but please see the [Contributor
 This repository serves as the root/entry point for the Psych-DS project, but most project docs and discussions are elsewhere. 
 
 [Draft Technical Specification](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) - this is the main document we are working on.
+
 [OpenCanvas](https://docs.google.com/presentation/d/1GQUpUPL3dHGc-Eb_3dL6WcXnA4hXpUanjAc8jUp16S0/edit?usp=sharing) - a basic definition/roadmap for the project (constructed for the Mozilla Open Leaders workshop and open for comment!)
 
 Things we will need to have in the future:
@@ -45,10 +50,12 @@ Doing this requires that we have a stable enough metadata schema/directory struc
 
 -- Edited instruction documents (especially if we can point people to tools that make preparation easier.)
 
--- What else?
+-- (Please add to this list)
 
 # How to Get Involved
 
 Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards). 
+
+To propose edits to this README document, please submit a pull request! 
 
 Please also feel free to contact me (Melissa Kline, mekline@mit.edu) if you have further questions.
