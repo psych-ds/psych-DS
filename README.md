@@ -1,8 +1,10 @@
 # psych-DS
 
-Welcome to the Psych Data Standard project! (Maybe we'll have a snappier name in the future.) This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at SIPS 2018. Psych-DS incorporates a few types of existing recommendations for organizing our work (well-formatted spreadsheets, data dictionaries, and sensible folder structure) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. 
+Welcome to the Psych Data Standard project! (Maybe we'll have a snappier name in the future.) This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at SIPS 2018. Psych-DS incorporates a few types of existing recommendations for organizing our work ([well-formatted spreadsheets](https://peerj.com/preprints/3183/), [data dictionaries](http://help.osf.io/m/bestpractices/l/618767-how-to-make-a-data-dictionary), and [sensible folder structure](https://www.projecttier.org/tier-protocol/specifications/)) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. 
 
-The page you are reading right now shows the advantage of having a technical spec - across many programming languages and contexts, programmers have agreed to use [a file named README](https://en.wikipedia.org/wiki/README) to describe what a project is about to a human who wants to learn about it.  Because this is a widely adopted and specific convention, a website like GitHub can support new features - when you put a file named README at the top of a repository, GitHub assumes it is the description of the project, and displays it nicely below the repository files. (This is really a raw text document, which you can see by clicking on the link to README.md. It uses [Markdown](https://en.wikipedia.org/wiki/Markdown), which is a lightweight way to format text for readable documents.)
+*The page you are reading right now shows the advantage of having a technical spec! Across many programming languages and contexts, programmers have agreed to use [a file named README](https://en.wikipedia.org/wiki/README) to describe what a project is about to a human who wants to learn about it.  Because this is a widely adopted and specific convention, a website like GitHub can support new features - when you put a file named README at the top of a repository, GitHub assumes it is the description of the project, and displays it nicely below the repository files. (This is really a raw text document, which you can see by clicking on the link to README.md. It uses [Markdown](https://en.wikipedia.org/wiki/Markdown), which is a lightweight way to format text for readable documents.)*
+
+[How to get involved](#how-to-get-involved)
 
 ## Some advantages of having a technical specification for our datasets:
 
@@ -54,8 +56,10 @@ Doing this requires that we have a stable enough metadata schema/directory struc
 
 # How to Get Involved
 
-Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards). 
+* Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards). 
 
-To propose edits to this README document, please submit a pull request! 
+* If you would like to join the mailing list, OR just want to hear about Psych-DS when we officially launch the specification, fill out [this form](https://goo.gl/forms/2dd6rouM1efJ3UBh2).
+
+* To propose edits to this README document, please submit a pull request! 
 
 Please also feel free to contact me (Melissa Kline, mekline@mit.edu) if you have further questions.
