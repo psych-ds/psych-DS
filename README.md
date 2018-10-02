@@ -4,8 +4,6 @@ Welcome to the Psych Data Standard project! (Maybe we'll have a snappier name in
 
 *The page you are reading right now shows the advantage of having a technical spec! Across many programming languages and contexts, programmers have agreed to use [a file named README](https://en.wikipedia.org/wiki/README) to describe what a project is about to a human who wants to learn about it.  Because this is a widely adopted and specific convention, a website like GitHub can support new features - when you put a file named README at the top of a repository, GitHub assumes it is the description of the project, and displays it nicely below the repository files. (This is really a raw text document, which you can see by clicking on the link to README.md. It uses [Markdown](https://en.wikipedia.org/wiki/Markdown), which is a lightweight way to format text for readable documents.)*
 
-[How to get involved](#how-to-get-involved)
-
 ## Some advantages of having a technical specification for our datasets:
 
 * From the beginning of a project, a researcher can format their data in a way that is likely to make their life easy for data analysis & management, and which will be easy to document and share.
@@ -14,7 +12,7 @@ Welcome to the Psych Data Standard project! (Maybe we'll have a snappier name in
 
 * Repositories (and researchers) can extract critical information about datasets to display them and make them discoverable (e.g. indexed by Google Datasets and other search tools.)  
 
-This is an ongoing project, and we are actively looking for contributors! (See How to Get Involved)
+This is an ongoing project, and we are actively looking for contributors! (See [How to get involved](#how-to-get-involved))
 
 # Ground rules/code of conduct
 
