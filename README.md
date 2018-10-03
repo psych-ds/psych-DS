@@ -22,18 +22,13 @@ This project welcomes contributions and contributors of all kinds, and expects y
 
 This repository serves as the root/entry point for the Psych-DS project, but most project docs and discussions are elsewhere. 
 
-[Draft Technical Specification](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) - this is the main document we are working on.
+[Draft Technical Specification](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) - This is the main document we are working on.
 
 [OpenCanvas](https://docs.google.com/presentation/d/1GQUpUPL3dHGc-Eb_3dL6WcXnA4hXpUanjAc8jUp16S0/edit?usp=sharing) - a basic definition/roadmap for the project (constructed for the Mozilla Open Leaders workshop and open for comment!)
 
-Things we will need to have in the future:
-
-- A website!
-
-
-- (Please add to this list)
-
 # Roadmap
+
+We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. 
 
 Some significant milestones:
 
@@ -53,10 +48,10 @@ Doing this requires that we have a stable enough metadata schema/directory struc
 
 # How to Get Involved
 
-* Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards). 
+* Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing), on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards), and (as plans solidify a bit more) in [Issues](https://github.com/mekline/psych-DS/issues) on this repository. Each issue has (or should have!) some instructions on how you can contribute to building a piece of Psych-DS.
 
 * If you would like to join the mailing list, OR just want to hear about Psych-DS when we officially launch the specification, fill out [this form](https://goo.gl/forms/2dd6rouM1efJ3UBh2).
 
-* To propose edits to this README document, please submit a pull request! 
+* To propose edits to this README document, please submit a pull request or comment below!
 
 Please also feel free to contact me (Melissa Kline, mekline@mit.edu) if you have further questions.
