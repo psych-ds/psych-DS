@@ -26,6 +26,10 @@ This repository serves as the root/entry point for the Psych-DS project, but mos
 
 [OpenCanvas](https://docs.google.com/presentation/d/1GQUpUPL3dHGc-Eb_3dL6WcXnA4hXpUanjAc8jUp16S0/edit?usp=sharing) - a basic definition/roadmap for the project (constructed for the Mozilla Open Leaders workshop and open for comment!)
 
+[Psych-DS mailing list](https://groups.google.com/forum/#!forum/psych-data-standards) - Discussion on building the specification starts here! If we identify a discrete task/topic, it moves to the:
+
+[Projects Page](https://github.com/mekline/psych-DS/projects) - The Projects page of the repository organizes the open issues we're working on into some categories. If you'd like to jump right in to contributing, this is the place to look.
+
 # Roadmap
 
 We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. 
