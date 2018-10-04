@@ -52,7 +52,7 @@ Doing this requires that we have a stable enough metadata schema/directory struc
 
 # How to Get Involved
 
-* Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing), on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards), and (as plans solidify a bit more) in [Issues](https://github.com/mekline/psych-DS/issues) on this repository. Each issue has (or should have!) some instructions on how you can contribute to building a piece of Psych-DS.
+* Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing), on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards), and (as plans solidify a bit more) in [Issues](https://github.com/mekline/psych-DS/issues) on this repository. Each issue has (or should have!) some instructions on how you can contribute to building a piece of Psych-DS. [Issue 12](https://github.com/mekline/psych-DS/issues/12) is a great place to start for new contributors.
 
 * If you would like to join the mailing list, OR just want to hear about Psych-DS when we officially launch the specification, fill out [this form](https://goo.gl/forms/2dd6rouM1efJ3UBh2).
 
