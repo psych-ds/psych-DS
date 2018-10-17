@@ -34,21 +34,19 @@ This repository serves as the root/entry point for the Psych-DS project, but mos
 
 We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. Right now, we're working on:
 
-#9 Choosing file naming conventions for the specification https://github.com/mekline/psych-DS/issues/9
+[#9](https://github.com/mekline/psych-DS/issues/9) Choosing file naming conventions for the specification 
 
-Some significant milestones:
+[#12](https://github.com/mekline/psych-DS/issues/12) Setting up and clarifying documentation for the project!
 
-- Release a prototype specification that researchers can try to meet on a dataset; call for feedback and/or example datasets.
-  
-Doing this requires that we have a stable enough metadata schema/directory structure, and a list of instructions for how people should prepare and submit a dataset to us.
+[#10](https://github.com/mekline/psych-DS/issues/10) Working on apps that will support the specification! 
 
-- Version 1.0 Launch! In addition to the above:
+Some significant future milestones:
 
--- A polished webpage
+[#4](https://github.com/mekline/psych-DS/issues/4) Build a webpage
 
--- Curated examples of datasets to spec (for developers, and for researchers looking for examples)
+-- Write a 'how to' doc for users of the specification (reading the tech spec. doc is not a good starting place)
 
--- Edited instruction documents (especially if we can point people to tools that make preparation easier.)
+-- Make example datasets that meet the specification (for developers to use in testing, and for researchers looking for examples)
 
 -- (Please add to this list)
 
