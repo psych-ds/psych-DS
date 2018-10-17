@@ -32,7 +32,9 @@ This repository serves as the root/entry point for the Psych-DS project, but mos
 
 # Roadmap
 
-We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. 
+We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. Right now, we're working on:
+
+#9 Choosing file naming conventions for the specification https://github.com/mekline/psych-DS/issues/9
 
 Some significant milestones:
 
