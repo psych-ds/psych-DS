@@ -16,7 +16,7 @@ This is an ongoing project, and we are actively looking for contributors! (See [
 
 # Ground rules/code of conduct
 
-This project welcomes contributions and contributors of all kinds, and expects you to treat each other with respect. We have adopted a code of conduct based on [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct), which you can see [here](https://github.com/mekline/psych-DS/blob/master/ContributorCodeofConduct.md) in full.  Please contact Melissa (mekline@mit.edu) if you have any concerns.
+This project welcomes contributions and contributors of all kinds, and expects you to treat each other with respect. We have adopted a code of conduct based on [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct), which you can see [here](https://github.com/psych-ds/psych-DS/blob/master/CODE_OF_CONDUCT.md) in full.  Please contact Melissa (mekline@mit.edu) if you have any concerns.
 
 # Project Documents
 
