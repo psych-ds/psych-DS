@@ -32,23 +32,9 @@ This repository serves as the root/entry point for the Psych-DS project, but mos
 
 # Roadmap
 
-We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. Right now, we're working on:
+We are starting to track project goals and milestones (aka ways to [get involved!](#how-to-get-involved)) in the [Issues](https://github.com/mekline/psych-DS/issues) section of this repository. Right now, we need help building some example datasets: 
 
-[#9](https://github.com/mekline/psych-DS/issues/9) Choosing file naming conventions for the specification 
-
-[#12](https://github.com/mekline/psych-DS/issues/12) Setting up and clarifying documentation for the project!
-
-[#10](https://github.com/mekline/psych-DS/issues/10) Working on apps that will support the specification! 
-
-Some significant future milestones:
-
-[#4](https://github.com/mekline/psych-DS/issues/4) Build a webpage
-
--- Write a 'how to' doc for users of the specification (reading the tech spec. doc is not a good starting place)
-
--- Make example datasets that meet the specification (for developers to use in testing, and for researchers looking for examples)
-
--- (Please add to this list)
+[#11](https://github.com/mekline/psych-DS/issues/11) - In order to make sure the draft specification actually does what it's supposed to, we need to test it out on some *real* datasets. To try this on your or one of the other examples already open, check out the [example-datasets repo](https://github.com/psych-ds/example-datasets). 
 
 # How to Get Involved
 
