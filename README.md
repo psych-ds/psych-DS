@@ -44,4 +44,4 @@ We are starting to track project goals and milestones (aka ways to [get involved
 
 * To propose edits to this README document, please submit a pull request or comment below!
 
-Please also feel free to contact me (Melissa Kline, mekline@mit.edu) if you have further questions.
+Please also feel free to contact me (Melissa Kline, melissa.e.kline@gmail.com) if you have further questions.
