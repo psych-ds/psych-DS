@@ -41,10 +41,7 @@ We are starting to track project goals and milestones (aka ways to [get involved
 # How to Get Involved
 
 * Right now, discussions about this project take place via comments/edits to the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing), on the [mailing list](https://groups.google.com/forum/#!forum/psych-data-standards), and (as plans solidify a bit more) in [Issues](https://github.com/mekline/psych-DS/issues) on this repository. Each issue has (or should have!) some instructions on how you can contribute to building a piece of Psych-DS. [Issue 12](https://github.com/mekline/psych-DS/issues/12) is a great place to start for new contributors.
-* A good place to start **even if you have no coding experience** is to:
-  * Read the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and simply leave a comment on anything you find to be unclear.
-  * Next, try to create a mock dataset that adheres to the technical specification. This should help expose elements of the spec that are unclear.
-  * At this point, you may be able to spot things that need changing or adding to the specification in order to accomodate likely use cases. 
+* A good place to start **even if you have no coding experience** is to read the [technical specification draft](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0/edit?usp=sharing) and simply leave a comment on anything you find to be unclear.
 * If you would like to join the mailing list, OR just want to hear about Psych-DS when we officially launch the specification, fill out [this form](https://goo.gl/forms/2dd6rouM1efJ3UBh2).
 * To propose edits to this README document, please submit a pull request or comment below!
 
