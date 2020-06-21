@@ -1,6 +1,8 @@
 # psych-DS
 
-Welcome to the Psych Data Standard project! This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at [SIPS](https://improvingpsych.org) 2018, and is heavily inspired by the [Brain Image Data Structure (BIDS)](https://bids.neuroimaging.io/) standard for fMRI data. Writing a standard for more general psychological work poses additional and unique challenges due to the more varied nature of psychology research.
+Welcome to the Psych Data Standard project! This readme is somewhat out of date - if you are visiting in June/July 2020, check out the [working document](https://docs.google.com/document/d/1MoiOzrl6esuVhjCk4cbTK4WPe1oGncS1PP0QluOng2o/edit#) for the SIPS 2020 hackathon. 
+
+This is an in-progress community attempt to define a standard way of formatting and documenting scientific datasets. It started as a hackathon at [SIPS](https://improvingpsych.org) 2018, and is heavily inspired by the [Brain Image Data Structure (BIDS)](https://bids.neuroimaging.io/) standard for fMRI data. Writing a standard for more general psychological work poses additional and unique challenges due to the more varied nature of psychology research.
 
 Psych-DS incorporates a few types of existing recommendations for organizing our work ([well-formatted spreadsheets](https://peerj.com/preprints/3183/), [data dictionaries](https://osf.io/vd4y3/), and [sensible folder structure](https://www.projecttier.org/tier-protocol/specifications/)) into a technical specification - a series of requirements for file structure and format that constitute a standard machine-readable template. 
 
