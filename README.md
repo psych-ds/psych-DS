@@ -28,6 +28,8 @@ This repository serves as an entry point for the Psych-DS project, but most proj
 
 [Psych-DS mailing list](https://groups.google.com/forum/#!forum/psych-data-standards) - Discussion on building the specification starts here! 
 
+[Psych-DS Hackathon Repositories](https://osf.io/dctue/): - Records from (mostly) annual SIPS Hackathons about Psych-DS.
+
 Mostly out of date: 
 
 [Projects Page](https://github.com/mekline/psych-DS/projects) - The Projects page of the repository organizes the open issues we're working on into some categories. If you'd like to jump right in to contributing, this is the place to look.
