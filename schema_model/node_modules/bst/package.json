@@ -1,0 +1,46 @@
+{
+  "name": "bst",
+  "version": "0.0.1",
+  "description": "A basic Binary Search Tree implementation in JavaScript.",
+  "main": "bst.js",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "bst.js"
+  ],
+  "scripts": {
+    "test": "./node_modules/tape/bin/tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelmota/bst"
+  },
+  "keywords": [
+    "binary",
+    "search",
+    "tree",
+    "algorithm",
+    "data",
+    "structure"
+  ],
+  "author": {
+    "name": "Miguel Mota",
+    "email": "hello@miguelmota.com",
+    "url": "http://www.miguelmota.com/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/miguelmota/bst/blob/master/LICENSE.md"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelmota/bst/issues"
+  },
+  "homepage": "https://github.com/miguelmota/bst",
+  "devDependencies": {
+    "tape": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
