@@ -1,5 +1,0 @@
-Datafile:
-  selectors:
-    - extension == ".csv"
-    - path.endswith("_data.csv")
-  additional_columns: allowed_if_defined
