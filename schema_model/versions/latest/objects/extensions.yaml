@@ -1,0 +1,12 @@
+json:
+  value: .json
+  display_name: JavaScript Object Notation
+  description: |
+    A JSON file.
+
+    Top-level and collated metadata files are all stored in the JSON format in psych-DS.
+csv:
+  value: .csv
+  display_name: Comma-Separated Values
+  description: |
+    A CSV file with a header row of column names spanning all filled columns.

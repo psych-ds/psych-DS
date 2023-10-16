@@ -1,0 +1,17 @@
+---
+dataset_description:
+  selectors:
+    - path == "/dataset_scription.json"
+  fields:
+    Name: required
+    SchemaVersion: required
+    Description: required
+    VariableMeasured: required
+    Author: recommended
+    Citation: recommended
+    License: recommended
+    Funder: recommended
+    Url: recommended
+    Identifier: recommended
+    PrivacyPolicy: recommended
+    Keywords: recommended
