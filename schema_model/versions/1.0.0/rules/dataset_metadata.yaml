@@ -3,15 +3,15 @@ dataset_description:
   selectors:
     - path == "/dataset_description.json"
   fields:
-    Name: required
-    SchemaVersion: required
-    Description: required
-    VariableMeasured: required
-    Author: recommended
-    Citation: recommended
-    License: recommended
-    Funder: recommended
-    Url: recommended
-    Identifier: recommended
-    PrivacyPolicy: recommended
-    Keywords: recommended
+    name: required
+    schemaVersion: required
+    description: required
+    variableMeasured: required
+    author: recommended
+    citation: recommended
+    license: recommended
+    funder: recommended
+    url: recommended
+    identifier: recommended
+    privacyPolicy: recommended
+    keywords: recommended
