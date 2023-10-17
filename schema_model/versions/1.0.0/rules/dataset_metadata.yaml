@@ -1,7 +1,7 @@
 ---
 dataset_description:
   selectors:
-    - path == "/dataset_scription.json"
+    - path == "/dataset_description.json"
   fields:
     Name: required
     SchemaVersion: required
