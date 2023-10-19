@@ -271,7 +271,7 @@
                             "extension == \".csv\"",
                             "suffix == \"data\""
                         ],
-                        "additional_columns": "allowed_if_defined"
+                        "columns": true
                     }
                 }
             },

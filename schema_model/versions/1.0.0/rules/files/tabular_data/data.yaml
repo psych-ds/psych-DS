@@ -2,4 +2,4 @@ Datafile:
   selectors:
     - extension == ".csv"
     - suffix == "data"
-  additional_columns: allowed_if_defined
+  columns: True
