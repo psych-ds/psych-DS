@@ -269,7 +269,8 @@
                     "Datafile": {
                         "selectors": [
                             "extension == \".csv\"",
-                            "suffix == \"data\""
+                            "suffix == \"data\"",
+                            "baseDir == \"data\""
                         ],
                         "suffix": "data",
                         "extensions": [
@@ -322,6 +323,19 @@
                         "level": "optional",
                         "path": "documentation"
                     }
+                }
+            },
+            "metadata": {
+                "DirectoryMetadata": {
+                    "path": "file_metadata.json",
+                    "baseDir": "data"
+                },
+                "SidecarMetadata": {
+                    "baseDir": "data",
+                    "suffix": "data",
+                    "extensions": [
+                        ".json"
+                    ]
                 }
             }
         },

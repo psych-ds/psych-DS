@@ -2,6 +2,7 @@ Datafile:
   selectors:
     - extension == ".csv"
     - suffix == "data"
+    - baseDir == "data"
   suffix: "data"
   extensions:
     - ".csv"
