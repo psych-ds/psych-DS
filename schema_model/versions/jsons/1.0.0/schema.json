@@ -269,9 +269,9 @@
                     "Datafile": {
                         "selectors": [
                             "extension == \".csv\"",
-                            "suffix == \"data\"",
-                            "baseDir == \"data\""
+                            "suffix == \"data\""
                         ],
+                        "baseDir": "data",
                         "columns": true
                     }
                 }
