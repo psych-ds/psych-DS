@@ -13,7 +13,13 @@ README:
     - .txt
 CHANGES:
   level: optional
-  path: CHANGES
+  stem: CHANGES
+  extensions:
+    - .md
+    - .txt
+data:
+  level: required
+  path: data
 analysis:
   level: optional
   path: analysis

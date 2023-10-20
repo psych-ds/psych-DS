@@ -269,7 +269,8 @@
                     "Datafile": {
                         "selectors": [
                             "extension == \".csv\"",
-                            "suffix == \"data\""
+                            "suffix == \"data\"",
+                            "baseDir == \"data\""
                         ],
                         "columns": true
                     }
@@ -291,7 +292,15 @@
                     },
                     "CHANGES": {
                         "level": "optional",
-                        "path": "CHANGES"
+                        "stem": "CHANGES",
+                        "extensions": [
+                            ".md",
+                            ".txt"
+                        ]
+                    },
+                    "data": {
+                        "level": "required",
+                        "path": "data"
                     },
                     "analysis": {
                         "level": "optional",
