@@ -20,15 +20,20 @@ CHANGES:
 data:
   level: required
   path: data
+  directory: true
 analysis:
   level: optional
   path: analysis
+  directory: true
 results:
   level: optional
   path: results
+  directory: true
 materials:
   level: optional
   path: materials
+  directory: true
 documentation:
   level: optional
   path: documentation
+  directory: true

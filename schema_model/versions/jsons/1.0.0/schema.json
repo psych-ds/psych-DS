@@ -305,34 +305,41 @@
                     },
                     "data": {
                         "level": "required",
-                        "path": "data"
+                        "path": "data",
+                        "directory": true
                     },
                     "analysis": {
                         "level": "optional",
-                        "path": "analysis"
+                        "path": "analysis",
+                        "directory": true
                     },
                     "results": {
                         "level": "optional",
-                        "path": "results"
+                        "path": "results",
+                        "directory": true
                     },
                     "materials": {
                         "level": "optional",
-                        "path": "materials"
+                        "path": "materials",
+                        "directory": true
                     },
                     "documentation": {
                         "level": "optional",
-                        "path": "documentation"
+                        "path": "documentation",
+                        "directory": true
                     }
                 }
             },
             "metadata": {
                 "DirectoryMetadata": {
                     "path": "file_metadata.json",
-                    "baseDir": "data"
+                    "baseDir": "data",
+                    "level": "optional"
                 },
                 "SidecarMetadata": {
                     "baseDir": "data",
                     "suffix": "data",
+                    "level": "optional",
                     "extensions": [
                         ".json"
                     ]
