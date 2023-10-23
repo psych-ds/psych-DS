@@ -41,3 +41,18 @@ products:
   description: |
     A directory in which to store any Any relevant products resulting from the project 
     (e.g., publications, posters, software descriptions, presentations, etc.) 
+DirectoryMetadata:
+  display_name: Directory Metadata
+  file_type: regular
+  description: |
+    A json file in which to store metadata that applies to all datafiles 
+    within the containing directory or within any nested subdirectories. 
+    Fields from the file replace the values of the global dataset_description object.
+SidecarMetadata:
+  display_name: Sidecar Metadata
+  file_type: regular
+  description: |
+    A json file in which to store metadata that applies to a specific datafile
+    within the containing directory. Fields from the file replace the values
+    of the global dataset_description object, and overwrite any fields
+    shared with the directory metadata.

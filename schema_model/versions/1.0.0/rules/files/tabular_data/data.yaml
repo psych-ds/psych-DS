@@ -1,10 +1,7 @@
 Datafile:
-  selectors:
-    - extension == ".csv"
-    - suffix == "data"
-    - baseDir == "data"
   suffix: "data"
   extensions:
     - ".csv"
   baseDir: "data"
-  columns: True
+  code: "MISSING_DATAFILE"
+  level: "required"

@@ -5,35 +5,43 @@
 dataset_description:
   level: required
   path: dataset_description.json
+  code: "MISSING_DATASET_DESCRIPTION"
 README:
   level: optional
   stem: README
   extensions:
     - .md
     - .txt
+  code: "MISSING_README_DOC"
 CHANGES:
   level: optional
   stem: CHANGES
   extensions:
     - .md
     - .txt
+  code: "MISSING_CHANGES_DOC"
 data:
   level: required
   path: data
   directory: true
+  code: "MISSING_DATA_DIRECTORY"
 analysis:
   level: optional
   path: analysis
   directory: true
+  code: "MISSING_ANALYSIS_DIRECTORY"
 results:
   level: optional
   path: results
   directory: true
+  code: "MISSING_RESULTS_DIRECTORY"
 materials:
   level: optional
   path: materials
   directory: true
+  code: "MISSING_MATERIALS_DIRECTORY"
 documentation:
   level: optional
   path: documentation
   directory: true
+  code: "MISSING_DOCUMENTATION_DIRECTORY"
