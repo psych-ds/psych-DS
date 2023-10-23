@@ -258,7 +258,17 @@
             "products": {
                 "display_name": "Products",
                 "file_type": "directory",
-                "description": "A directory in which to store any Any relevant products resulting from the project \n(e.g., publications, posters, software descriptions, presentations, etc.) "
+                "description": "A directory in which to store any Any relevant products resulting from the project \n(e.g., publications, posters, software descriptions, presentations, etc.) \n"
+            },
+            "DirectoryMetadata": {
+                "display_name": "Directory Metadata",
+                "file_type": "regular",
+                "description": "A json file in which to store metadata that applies to all datafiles \nwithin the containing directory or within any nested subdirectories. \nFields from the file replace the values of the global dataset_description object.\n"
+            },
+            "SidecarMetadata": {
+                "display_name": "Sidecar Metadata",
+                "file_type": "regular",
+                "description": "A json file in which to store metadata that applies to a specific datafile\nwithin the containing directory. Fields from the file replace the values\nof the global dataset_description object, and overwrite any fields\nshared with the directory metadata."
             }
         }
     },
@@ -267,17 +277,13 @@
             "tabular_data": {
                 "data": {
                     "Datafile": {
-                        "selectors": [
-                            "extension == \".csv\"",
-                            "suffix == \"data\"",
-                            "baseDir == \"data\""
-                        ],
                         "suffix": "data",
                         "extensions": [
                             ".csv"
                         ],
                         "baseDir": "data",
-                        "columns": true
+                        "code": "MISSING_DATAFILE",
+                        "level": "required"
                     }
                 }
             },
@@ -285,7 +291,8 @@
                 "core": {
                     "dataset_description": {
                         "level": "required",
-                        "path": "dataset_description.json"
+                        "path": "dataset_description.json",
+                        "code": "MISSING_DATASET_DESCRIPTION"
                     },
                     "README": {
                         "level": "optional",
@@ -293,7 +300,8 @@
                         "extensions": [
                             ".md",
                             ".txt"
-                        ]
+                        ],
+                        "code": "MISSING_README_DOC"
                     },
                     "CHANGES": {
                         "level": "optional",
@@ -301,32 +309,38 @@
                         "extensions": [
                             ".md",
                             ".txt"
-                        ]
+                        ],
+                        "code": "MISSING_CHANGES_DOC"
                     },
                     "data": {
                         "level": "required",
                         "path": "data",
-                        "directory": true
+                        "directory": true,
+                        "code": "MISSING_DATA_DIRECTORY"
                     },
                     "analysis": {
                         "level": "optional",
                         "path": "analysis",
-                        "directory": true
+                        "directory": true,
+                        "code": "MISSING_ANALYSIS_DIRECTORY"
                     },
                     "results": {
                         "level": "optional",
                         "path": "results",
-                        "directory": true
+                        "directory": true,
+                        "code": "MISSING_RESULTS_DIRECTORY"
                     },
                     "materials": {
                         "level": "optional",
                         "path": "materials",
-                        "directory": true
+                        "directory": true,
+                        "code": "MISSING_MATERIALS_DIRECTORY"
                     },
                     "documentation": {
                         "level": "optional",
                         "path": "documentation",
-                        "directory": true
+                        "directory": true,
+                        "code": "MISSING_DOCUMENTATION_DIRECTORY"
                     }
                 }
             },
@@ -334,7 +348,8 @@
                 "DirectoryMetadata": {
                     "path": "file_metadata.json",
                     "baseDir": "data",
-                    "level": "optional"
+                    "level": "optional",
+                    "code": "MISSING_DIRECTORY_METADATA"
                 },
                 "SidecarMetadata": {
                     "baseDir": "data",
@@ -342,7 +357,8 @@
                     "level": "optional",
                     "extensions": [
                         ".json"
-                    ]
+                    ],
+                    "code": "MISSING_SIDECAR_METADATA"
                 }
             }
         },
@@ -407,6 +423,16 @@
             "dataset",
             "extension",
             "keywords"
-        ]
+        ],
+        "csv_data": {
+            "Datafile": {
+                "selectors": [
+                    "extension == \".csv\"",
+                    "suffix == \"data\"",
+                    "baseDir == \"data\""
+                ],
+                "columns": true
+            }
+        }
     }
 }

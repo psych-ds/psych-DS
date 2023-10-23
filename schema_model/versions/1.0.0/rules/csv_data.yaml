@@ -3,4 +3,4 @@ Datafile:
     - extension == ".csv"
     - suffix == "data"
     - baseDir == "data"
-    columns: true
+  columns: true
