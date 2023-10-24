@@ -293,7 +293,8 @@
                         ],
                         "baseDir": "data",
                         "code": "MISSING_DATAFILE",
-                        "level": "required"
+                        "level": "error",
+                        "reason": "It is required to include at least one valid csv datafile under the data subdirectory "
                     }
                 }
             },
@@ -330,31 +331,35 @@
                         "path": "data",
                         "directory": true,
                         "code": "MISSING_DATA_DIRECTORY",
-                        "reason": "It is required to subdirectory named 'data' the base directory"
+                        "reason": "It is required to include a subdirectory named 'data' in the base directory"
                     },
                     "analysis": {
                         "level": "warning",
                         "path": "analysis",
                         "directory": true,
-                        "code": "MISSING_ANALYSIS_DIRECTORY"
+                        "code": "MISSING_ANALYSIS_DIRECTORY",
+                        "reason": "It is recommended to include subdirectory named 'analysis' the base directory"
                     },
                     "results": {
                         "level": "warning",
                         "path": "results",
                         "directory": true,
-                        "code": "MISSING_RESULTS_DIRECTORY"
+                        "code": "MISSING_RESULTS_DIRECTORY",
+                        "reason": "It is recommended to include subdirectory named 'results' the base directory"
                     },
                     "materials": {
                         "level": "warning",
                         "path": "materials",
                         "directory": true,
-                        "code": "MISSING_MATERIALS_DIRECTORY"
+                        "code": "MISSING_MATERIALS_DIRECTORY",
+                        "reason": "It is recommended to include subdirectory named 'materials' the base directory"
                     },
                     "documentation": {
                         "level": "warning",
                         "path": "documentation",
                         "directory": true,
-                        "code": "MISSING_DOCUMENTATION_DIRECTORY"
+                        "code": "MISSING_DOCUMENTATION_DIRECTORY",
+                        "reason": "It is recommended to include subdirectory named 'documentation' the base directory"
                     }
                 }
             },
@@ -363,7 +368,8 @@
                     "path": "file_metadata.json",
                     "baseDir": "data",
                     "level": "warning",
-                    "code": "MISSING_DIRECTORY_METADATA"
+                    "code": "MISSING_DIRECTORY_METADATA",
+                    "reason": "It is optional to include a json metadata file within a data subdirectory that \napplies to all files within the current directory and its subdirectories\n"
                 },
                 "SidecarMetadata": {
                     "baseDir": "data",
@@ -372,7 +378,8 @@
                     "extensions": [
                         ".json"
                     ],
-                    "code": "MISSING_SIDECAR_METADATA"
+                    "code": "MISSING_SIDECAR_METADATA",
+                    "reason": "It is optional to include a json metadata file within a data subdirectory\nthat applies to a specific csv datafile within the current directory"
                 }
             }
         },

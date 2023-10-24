@@ -3,6 +3,10 @@ DirectoryMetadata:
   baseDir: "data"
   level: warning
   code: "MISSING_DIRECTORY_METADATA"
+  reason: |
+    It is optional to include a json metadata file within a data subdirectory that 
+    applies to all files within the current directory and its subdirectories
+
 SidecarMetadata:
   baseDir: "data"
   suffix: "data"
@@ -10,3 +14,6 @@ SidecarMetadata:
   extensions:
     - ".json"
   code: "MISSING_SIDECAR_METADATA"
+  reason: |
+    It is optional to include a json metadata file within a data subdirectory
+    that applies to a specific csv datafile within the current directory

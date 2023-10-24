@@ -4,4 +4,5 @@ Datafile:
     - ".csv"
   baseDir: "data"
   code: "MISSING_DATAFILE"
-  level: "required"
+  level: error
+  reason: "It is required to include at least one valid csv datafile under the data subdirectory "
