@@ -338,28 +338,28 @@
                         "path": "analysis",
                         "directory": true,
                         "code": "MISSING_ANALYSIS_DIRECTORY",
-                        "reason": "It is recommended to include subdirectory named 'analysis' the base directory"
+                        "reason": "It is recommended to include subdirectory named 'analysis' in the base directory"
                     },
                     "results": {
                         "level": "warning",
                         "path": "results",
                         "directory": true,
                         "code": "MISSING_RESULTS_DIRECTORY",
-                        "reason": "It is recommended to include subdirectory named 'results' the base directory"
+                        "reason": "It is recommended to include subdirectory named 'results' in the base directory"
                     },
                     "materials": {
                         "level": "warning",
                         "path": "materials",
                         "directory": true,
                         "code": "MISSING_MATERIALS_DIRECTORY",
-                        "reason": "It is recommended to include subdirectory named 'materials' the base directory"
+                        "reason": "It is recommended to include subdirectory named 'materials' in the base directory"
                     },
                     "documentation": {
                         "level": "warning",
                         "path": "documentation",
                         "directory": true,
                         "code": "MISSING_DOCUMENTATION_DIRECTORY",
-                        "reason": "It is recommended to include subdirectory named 'documentation' the base directory"
+                        "reason": "It is recommended to include subdirectory named 'documentation' in the base directory"
                     }
                 }
             },
