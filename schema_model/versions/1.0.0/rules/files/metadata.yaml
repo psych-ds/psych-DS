@@ -1,12 +1,12 @@
 DirectoryMetadata:
   path: "file_metadata.json"
   baseDir: "data"
-  level: 'optional'
+  level: warning
   code: "MISSING_DIRECTORY_METADATA"
 SidecarMetadata:
   baseDir: "data"
   suffix: "data"
-  level: 'optional'
+  level: warning
   extensions:
     - ".json"
   code: "MISSING_SIDECAR_METADATA"

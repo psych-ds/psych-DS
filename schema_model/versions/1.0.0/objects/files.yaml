@@ -15,6 +15,17 @@ dataset_description:
   file_type: regular
   description: |
     The metadata file `dataset_description.json` is a JSON file describing the dataset.
+DataFile:
+  display_name: CSV Datafile
+  file_type: regular
+  description: |
+    A CSV file under the /data directory in which the official psych-DS compliant data from
+    the dataset is stored.
+data:
+  display_name: Data
+  file_type: directory
+  description: |
+    The directory in which to store all datafiles from the dataset.
 analysis:
   display_name: Analysis
   file_type: directory

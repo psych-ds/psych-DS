@@ -235,6 +235,16 @@
                 "file_type": "regular",
                 "description": "The metadata file `dataset_description.json` is a JSON file describing the dataset.\n"
             },
+            "DataFile": {
+                "display_name": "CSV Datafile",
+                "file_type": "regular",
+                "description": "A CSV file under the /data directory in which the official psych-DS compliant data from\nthe dataset is stored.\n"
+            },
+            "data": {
+                "display_name": "Data",
+                "file_type": "directory",
+                "description": "The directory in which to store all datafiles from the dataset.\n"
+            },
             "analysis": {
                 "display_name": "Analysis",
                 "file_type": "directory",
@@ -292,7 +302,8 @@
                     "dataset_description": {
                         "level": "required",
                         "path": "dataset_description.json",
-                        "code": "MISSING_DATASET_DESCRIPTION"
+                        "code": "MISSING_DATASET_DESCRIPTION",
+                        "reason": "It is required to include a 'dataset_description.json' in the base directory"
                     },
                     "README": {
                         "level": "optional",
@@ -301,7 +312,8 @@
                             ".md",
                             ".txt"
                         ],
-                        "code": "MISSING_README_DOC"
+                        "code": "MISSING_README_DOC",
+                        "reason": "It is recommended to include a 'README.md' or 'README.txt' file in the base directory"
                     },
                     "CHANGES": {
                         "level": "optional",
@@ -310,13 +322,15 @@
                             ".md",
                             ".txt"
                         ],
-                        "code": "MISSING_CHANGES_DOC"
+                        "code": "MISSING_CHANGES_DOC",
+                        "reason": "It is recommended to include a 'CHANGES.md' or 'CHANGES.txt' file in the base directory"
                     },
                     "data": {
                         "level": "required",
                         "path": "data",
                         "directory": true,
-                        "code": "MISSING_DATA_DIRECTORY"
+                        "code": "MISSING_DATA_DIRECTORY",
+                        "reason": "It is required to subdirectory named 'data' the base directory"
                     },
                     "analysis": {
                         "level": "optional",
@@ -348,13 +362,13 @@
                 "DirectoryMetadata": {
                     "path": "file_metadata.json",
                     "baseDir": "data",
-                    "level": "optional",
+                    "level": "warning",
                     "code": "MISSING_DIRECTORY_METADATA"
                 },
                 "SidecarMetadata": {
                     "baseDir": "data",
                     "suffix": "data",
-                    "level": "optional",
+                    "level": "warning",
                     "extensions": [
                         ".json"
                     ],
