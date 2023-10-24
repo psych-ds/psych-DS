@@ -3,12 +3,12 @@
 # of a dataset.
 # The keys of this file must match keys in objects/files.yaml
 dataset_description:
-  level: required
+  level: error
   path: dataset_description.json
   code: "MISSING_DATASET_DESCRIPTION"
   reason: "It is required to include a 'dataset_description.json' in the base directory"
 README:
-  level: optional
+  level: warning
   stem: README
   extensions:
     - .md
@@ -16,7 +16,7 @@ README:
   code: "MISSING_README_DOC"
   reason: "It is recommended to include a 'README.md' or 'README.txt' file in the base directory"
 CHANGES:
-  level: optional
+  level: warning
   stem: CHANGES
   extensions:
     - .md
@@ -24,28 +24,28 @@ CHANGES:
   code: "MISSING_CHANGES_DOC"
   reason: "It is recommended to include a 'CHANGES.md' or 'CHANGES.txt' file in the base directory"
 data:
-  level: required
+  level: error
   path: data
   directory: true
   code: "MISSING_DATA_DIRECTORY"
   reason: "It is required to subdirectory named 'data' the base directory"
 analysis:
-  level: optional
+  level: warning
   path: analysis
   directory: true
   code: "MISSING_ANALYSIS_DIRECTORY"
 results:
-  level: optional
+  level: warning
   path: results
   directory: true
   code: "MISSING_RESULTS_DIRECTORY"
 materials:
-  level: optional
+  level: warning
   path: materials
   directory: true
   code: "MISSING_MATERIALS_DIRECTORY"
 documentation:
-  level: optional
+  level: warning
   path: documentation
   directory: true
   code: "MISSING_DOCUMENTATION_DIRECTORY"
