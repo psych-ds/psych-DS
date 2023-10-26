@@ -2,7 +2,7 @@
 name: Psych-DS Specification Issue
 about: Raise a point, ask a question, or provide an idea concerning the psych-DS schema, including specific rules and requirements, organizational issues with the linkML model, extensions to the model, etc.
 title: 'Psych-DS Specification Issue'
-labels: 
+labels: SpecificationIssue
 assignees: bleonar5
 
 ---
