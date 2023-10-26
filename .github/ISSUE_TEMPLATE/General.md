@@ -2,7 +2,7 @@
 name: General Psych-DS Project Issue
 about: Raise a point, ask a question, or provide an idea concerning the psych-DS project in general, including proposing tools, ideas about the scope of the specification, or "meta" issues about the project.
 title: 'General Psych-DS Project Issue'
-labels: 
+labels: GeneralIssue
 assignees: bleonar5
 
 ---
