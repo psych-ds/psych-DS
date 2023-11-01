@@ -390,7 +390,6 @@
                 ],
                 "fields": {
                     "name": "required",
-                    "schemaVersion": "required",
                     "description": "required",
                     "variableMeasured": "required",
                     "author": "recommended",
