@@ -317,7 +317,7 @@
                         "reason": "It is recommended to include a 'README.md' or 'README.txt' file in the base directory"
                     },
                     "CHANGES": {
-                        "level": "warning",
+                        "level": "ignore",
                         "stem": "CHANGES",
                         "extensions": [
                             ".md",
@@ -334,28 +334,28 @@
                         "reason": "It is required to include a subdirectory named 'data' in the base directory"
                     },
                     "analysis": {
-                        "level": "warning",
+                        "level": "ignore",
                         "path": "analysis",
                         "directory": true,
                         "code": "MISSING_ANALYSIS_DIRECTORY",
                         "reason": "It is recommended to include subdirectory named 'analysis' in the base directory"
                     },
                     "results": {
-                        "level": "warning",
+                        "level": "ignore",
                         "path": "results",
                         "directory": true,
                         "code": "MISSING_RESULTS_DIRECTORY",
                         "reason": "It is recommended to include subdirectory named 'results' in the base directory"
                     },
                     "materials": {
-                        "level": "warning",
+                        "level": "ignore",
                         "path": "materials",
                         "directory": true,
                         "code": "MISSING_MATERIALS_DIRECTORY",
                         "reason": "It is recommended to include subdirectory named 'materials' in the base directory"
                     },
                     "documentation": {
-                        "level": "warning",
+                        "level": "ignore",
                         "path": "documentation",
                         "directory": true,
                         "code": "MISSING_DOCUMENTATION_DIRECTORY",
