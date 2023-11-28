@@ -14,3 +14,5 @@ dataset_description:
     identifier: recommended
     privacyPolicy: recommended
     keywords: recommended
+  jsonld:
+    - true
