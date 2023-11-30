@@ -401,6 +401,7 @@
                     "privacyPolicy": "recommended",
                     "keywords": "recommended"
                 },
+                "namespace": "http://schema.org/",
                 "jsonld": [
                     true
                 ]
