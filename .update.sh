@@ -1,6 +1,4 @@
 #!/bin/bash
-python3 schema_model/tools/convert_to_json.py schema_model/external_schemas/schemaorg/schemaorg.yaml
-mv schema.json schema_model/external_schemas/schemaorg/schemaorg.json
 python3 schema_model/tools/convert_to_json.py schema_model/versions/1.0.0
 mv schema.json schema_model/versions/jsons/1.0.0 
 cp schema_model/versions/jsons/1.0.0/schema.json schema_model/versions/jsons/latest 
