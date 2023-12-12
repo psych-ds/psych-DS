@@ -1,7 +1,7 @@
 ---
 dataset_description:
   selectors:
-    - path == "dataset_description.json"
+    - path == "/dataset_description.json"
   fields:
     name: required
     description: required
