@@ -1,6 +1,7 @@
 DirectoryMetadata:
   path: "file_metadata.json"
   baseDir: "data"
+  arbitraryNesting: true
   level: warning
   code: "MISSING_DIRECTORY_METADATA"
   reason: |
@@ -9,8 +10,10 @@ DirectoryMetadata:
 
 SidecarMetadata:
   baseDir: "data"
+  arbitraryNesting: true
   suffix: "data"
   level: warning
+  arbitraryNe
   extensions:
     - ".json"
   code: "MISSING_SIDECAR_METADATA"
