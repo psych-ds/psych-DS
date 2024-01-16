@@ -292,6 +292,12 @@
                             ".csv"
                         ],
                         "baseDir": "data",
+                        "arbitraryNesting": true,
+                        "usesKeywords": true,
+                        "nonCanonicalKeywordsAllowed": true,
+                        "lowerCaseKeywords": true,
+                        "keywordRegex": "[a-z]+",
+                        "fileRegex": "/([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\\.csv/",
                         "code": "MISSING_DATAFILE",
                         "level": "error",
                         "reason": "It is required to include at least one valid csv datafile under the data subdirectory "
@@ -367,12 +373,14 @@
                 "DirectoryMetadata": {
                     "path": "file_metadata.json",
                     "baseDir": "data",
+                    "arbitraryNesting": true,
                     "level": "warning",
                     "code": "MISSING_DIRECTORY_METADATA",
                     "reason": "It is optional to include a json metadata file within a data subdirectory that \napplies to all files within the current directory and its subdirectories\n"
                 },
                 "SidecarMetadata": {
                     "baseDir": "data",
+                    "arbitraryNesting": true,
                     "suffix": "data",
                     "level": "warning",
                     "extensions": [
