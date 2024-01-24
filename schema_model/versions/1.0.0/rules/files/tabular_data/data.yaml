@@ -6,8 +6,6 @@ Datafile:
   arbitraryNesting: true
   usesKeywords: true
   nonCanonicalKeywordsAllowed: true
-  lowerCaseKeywords: true
-  keywordRegex: '[a-z]+'
   fileRegex: '([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv'
   code: "MISSING_DATAFILE"
   level: error

@@ -295,8 +295,6 @@
                         "arbitraryNesting": true,
                         "usesKeywords": true,
                         "nonCanonicalKeywordsAllowed": true,
-                        "lowerCaseKeywords": true,
-                        "keywordRegex": "[a-z]+",
                         "fileRegex": "([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\\.csv",
                         "code": "MISSING_DATAFILE",
                         "level": "error",
@@ -410,7 +408,9 @@
                     "keywords": "recommended"
                 },
                 "namespace": "http://schema.org/",
-                "jsonld": true
+                "jsonld": true,
+                "contains_all_columns": true,
+                "variableMeasured_obeys_schemaOrg": true
             }
         },
         "errors": {
@@ -437,8 +437,8 @@
             },
             "EmptyFile": {
                 "code": "EMPTY_FILE",
-                "message": "Empty files not allowed.\n",
-                "level": "error"
+                "level": "error",
+                "reason": "empty files not allowed."
             },
             "InvalidJsonEncoding": {
                 "code": "INVALID_JSON_ENCODING",
@@ -447,6 +447,101 @@
                 "selectors": [
                     "extension == \".json\""
                 ]
+            },
+            "JsonKeyRequired": {
+                "code": "JSON_KEY_REQUIRED",
+                "level": "error",
+                "reason": "The dataset_description.json file is missing a key listed as required."
+            },
+            "JsonKeyRecommended": {
+                "code": "JSON_KEY_RECOMMENDED",
+                "level": "warning,",
+                "reason": "A data files JSON sidecar is missing a key listed as recommended."
+            },
+            "CsvColumnMissing": {
+                "code": "CSV_COLUMN_MISSING",
+                "level": "error",
+                "reason": "A required column is missing"
+            },
+            "NotIncluded": {
+                "code": "NOT_INCLUDED",
+                "level": "warning",
+                "reason": "Files with such naming scheme are not part of psych-DS specification.\nUnder the rules of psych-DS, non-specified files are allowed to be included,\nbut if you would like to avoid receiving this warning moving forward, you can include\nin your \".psychdsignore\" file\n"
+            },
+            "MissingRequiredElement": {
+                "code": "MISSING_REQUIRED_ELEMENT",
+                "level": "error",
+                "reason": "Your dataset is missing an element that is required under the psych-DS specification."
+            },
+            "NoHeader": {
+                "code": "NO_HEADER",
+                "level": "error",
+                "reason": "CSV data files must contain a valid header with at least one column."
+            },
+            "HeaderRowMismatch": {
+                "code": "HEADER_ROW_MISMATCH",
+                "level": "error",
+                "reason": "The header and all rows for CSV data files must contain the same number of columns."
+            },
+            "RowidValuesNotUnique": {
+                "code": "ROWID_VALUES_NOT_UNIQUE",
+                "level": "error",
+                "reason": "Columns within CSV data files with the header \"row_id\" must contain unique values in every row."
+            },
+            "WrongMetadataLocation": {
+                "code": "WRONG_METADATA_LOCATION",
+                "level": "warning",
+                "reason": "The main metadata file must be located within the root directory"
+            },
+            "KeywordFormattingError": {
+                "code": "KEYWORD_FORMATTING_ERROR",
+                "level": "error",
+                "reason": "All datafiles must use psych-DS keyword formatting. That is, datafile names must consist of\na series of keyword-value pairs, separated by underscores, with keywords using only lowercase\nalphabetic characters and values using any alphanumeric characters of either case. The file must\nend with '_data.csv'. In other words, files must follow this regex: \n/([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\\.csv/\n"
+            },
+            "UnofficialKeywordWarning": {
+                "code": "UNOFFICIAL_KEYWORD_WARNING",
+                "level": "warning",
+                "reason": "Although it is not recommended, datafiles are permitted to use keywords other than those provided\nin the official psych-DS specification. If you do choose to use unofficial keywords, please ensure\nthat they are clearly defined within your research community and used consistently across relevant datasets.\n"
+            },
+            "UnofficialKeywordError": {
+                "code": "UNOFFICIAL_KEYWORD_ERROR",
+                "level": "error",
+                "reason": "Names for data files must not include keywords other than those listed in the psych-DS schema."
+            },
+            "InvalidJsonFormatting": {
+                "code": "INVALID_JSON_FORMATTING",
+                "level": "error",
+                "reason": "One of your metadata files in not in valid JSON format."
+            },
+            "IncorrectDatasetType": {
+                "code": "INCORRECT_DATASET_TYPE",
+                "level": "error",
+                "reason": "Your metadata is missing the required schema.org \"Dataset\" type"
+            },
+            "MissingDatasetType": {
+                "code": "MISSING_DATASET_TYPE",
+                "level": "error",
+                "reason": "Your metadata is missing the \"@type/type\" property, which is required."
+            },
+            "UnknownNamespace": {
+                "code": "UNKNOWN_NAMESPACE",
+                "level": "warning",
+                "reason": "The psych-DS validator only has access to one external vocabulary, \"http://schema.org\";\nany other reference to an external schema is permitted, but the validity of the terms used\ncannot be confirmed.\n"
+            },
+            "ObjectTypeMissing": {
+                "code": "OBJECT_TYPE_MISSING",
+                "level": "warning",
+                "reason": "For compliance with the schema.org ontology, all objects within the metadata (with a few exceptions)\nthat appear as the value of a schema.org key/property must contain a \"@type\" key with a valid schema.org type \nas its value.\n"
+            },
+            "InvalidSchemaorgProperty": {
+                "code": "INVALID_SCHEMAORG_PROPERTY",
+                "level": "warning",
+                "reason": "The schema.org ontology contains a fixed set of legal properties which can be applied to objects within the metadata.\n If schema.org is used as the only @context within your metadata, then all properties will be interpreted as schema.org properties.\n Using an invalid schema.org property is not considered an error in the psych-DS specification, but it should be understood\n that such usages result in the property in question not being interpretable by machines.\n"
+            },
+            "InvalidObjectType": {
+                "code": "INVALID_OBJECT_TYPE",
+                "level": "warning",
+                "reason": "Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values.\nincluding an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS,\nbut it will result in the object in question not being interpretable by machines.\n"
             }
         },
         "common_principles": [

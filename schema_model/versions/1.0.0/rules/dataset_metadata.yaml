@@ -16,3 +16,5 @@ dataset_description:
     keywords: recommended
   namespace: "http://schema.org/"
   jsonld: true
+  contains_all_columns: true
+  variableMeasured_obeys_schemaOrg: true

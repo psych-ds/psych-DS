@@ -13,7 +13,6 @@ SidecarMetadata:
   arbitraryNesting: true
   suffix: "data"
   level: warning
-  arbitraryNesting: true
   extensions:
     - ".json"
   code: "MISSING_SIDECAR_METADATA"
