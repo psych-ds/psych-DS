@@ -4,7 +4,7 @@
 # The keys of this file must match keys in objects/files.yaml
 dataset_description:
   level: error
-  path: dataset_description.json
+  path: /dataset_description.json
   code: "MISSING_DATASET_DESCRIPTION"
   reason: "It is required to include a 'dataset_description.json' in the base directory"
 README:
@@ -25,34 +25,34 @@ CHANGES:
   reason: "It is recommended to include a 'CHANGES.md' or 'CHANGES.txt' file in the base directory"
 data:
   level: error
-  path: data
+  path: /data
   directory: true
   code: "MISSING_DATA_DIRECTORY"
   reason: "It is required to include a subdirectory named 'data' in the base directory"
 analysis:
   level: ignore
-  path: analysis
+  path: /analysis
   directory: true
   code: "MISSING_ANALYSIS_DIRECTORY"
   reason: "It is recommended to include subdirectory named 'analysis' in the base directory"
 
 results:
   level: ignore
-  path: results
+  path: /results
   directory: true
   code: "MISSING_RESULTS_DIRECTORY"
   reason: "It is recommended to include subdirectory named 'results' in the base directory"
 
 materials:
   level: ignore
-  path: materials
+  path: /materials
   directory: true
   code: "MISSING_MATERIALS_DIRECTORY"
   reason: "It is recommended to include subdirectory named 'materials' in the base directory"
 
 documentation:
   level: ignore
-  path: documentation
+  path: /documentation
   directory: true
   code: "MISSING_DOCUMENTATION_DIRECTORY"
   reason: "It is recommended to include subdirectory named 'documentation' in the base directory"
