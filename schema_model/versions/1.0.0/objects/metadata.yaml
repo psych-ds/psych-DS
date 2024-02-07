@@ -64,8 +64,8 @@ identifier:
   description: |
     Identifier that uniquely distinguishes the dataset.
   type: string
-privacyPolicy:
-  name: privacyPolicy
+usageInfo:
+  name: usageInfo
   display_name: Privacy Policy
   description: |
     A string to indicate whether any of the values in the dataset are desired to be shareable.
