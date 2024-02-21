@@ -44,7 +44,59 @@
                     },
                     "level": {
                         "type": "string",
-                        "description": "This property describes the severity of a rule:\n\n- error: failure to satisfy this rule results in an invalid dataset\n- warning: failure to satisfy this rule results in a warning, which is displayed when the --showWarnings flag is used\n- ignore: failure to satisfy this rule has no effect.\n"
+                        "description": "Property describing the severity of a rule. Only the following values are used:\n\n- error: failure to satisfy this rule results in an invalid dataset\n- warning: failure to satisfy this rule results in a warning, which is displayed when the --showWarnings flag is used\n- ignore: failure to satisfy this rule has no effect.\n"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Unique code identifying a specific error/warning \n"
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "paragraph accompanying an error/warning that provides context for what may cause it.\n"
+                    },
+                    "directory": {
+                        "type": "boolean",
+                        "description": "Indicator for whether a given object is expected to be a directory or a file.\n"
+                    },
+                    "arbitraryNesting": {
+                        "type": "boolean",
+                        "description": "Indicator for whether a given file object is allowed to be nested within an arbitrary number of subdirectories.\n"
+                    },
+                    "usesKeywords": {
+                        "type": "boolean",
+                        "description": "Indicator for whether a given file object requires keyword formatting.\n"
+                    },
+                    "nonCanonicalKeywordsAllowed": {
+                        "type": "boolean",
+                        "description": "Indicator for whether a given file object is required to use only official Psych-DS keywords\n"
+                    },
+                    "fileRegex": {
+                        "type": "regular expression",
+                        "description": "Regular expression defining the legal formatting of a filename.\n"
+                    },
+                    "baseDir": {
+                        "type": "string",
+                        "description": "Name of the directory under which the file object is expected to appear.\n"
+                    },
+                    "columnsMatchMetadata": {
+                        "type": "boolean",
+                        "description": "Indicator for whether a given file object's columns must be enumerated within the metadata under\nthe variableMeasured property\n"
+                    },
+                    "fields": {
+                        "type": "object",
+                        "description": "Set of key/value pairs defining the fields that are expected to occur in a given file object, \nand whether they are required or recommended.\n"
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "URL identifying the required namespace to be used for required fields in the file object.\nNamespaces are web prefixes that point to ontologies which contain definitions of semantic vocabularies.\n"
+                    },
+                    "jsonld": {
+                        "type": "boolean",
+                        "description": "Indicator for whether the given file object is required to be a valid JSON-LD object.\n"
+                    },
+                    "containsAllColumns": {
+                        "type": "boolean",
+                        "description": ""
                     },
                     "sidecar": {
                         "description": "Sidecar metadata constructed via the inheritance principle",
@@ -151,7 +203,7 @@
             "inheritance": {
                 "name": "Inheritance",
                 "display_name": "Inheritance",
-                "description": "In addition to the mandatory \"dataset_description.json\" file at the root of the dataset,\nPsych-DS allows for the inclusion of additional metadata files, whose fields apply to \nspecific subsets of the data. There are two types of inherited metadata:\n\n1. Sidecar files, which contain metadata that pertains to one specific datafile. These sidecars\nmust have the exact same name as their corresponding datafile, with the \".json\" extension instead \nof the \".csv\" extension. Sidecars must occupy the same directory as their datafile.\n2. Directory metadata, which always takes the form \"file_metadata.json\". The metadata contained in\nsuch files apply to all datafiles within its directory and all subdirectories thereof.\n\nMetadata key/value pairs found in higher-level JSON files are inherited by all lower levels unless they are explicitly \noverridden by a file at the lower level.\n\nFor example, suppose we have the following project structure:\n\ndataset_description.json\ndata/\n  file_metadata.json\n  subject-1/\n    file_metadata.json\n    subject-1_condition-A_data.csv\n    subject-1_condition-B_data.json\n    subject-1_condition-B_data.csv\n  subject-2/\n    subject-2_condition-A_data.json\n    subject-2_condition-A_data.csv\n    subject-2_condition-B_data.csv\n"
+                "description": "In addition to the mandatory \"dataset_description.json\" file at the root of the dataset,\nPsych-DS allows for the inclusion of additional metadata files, whose fields apply to \nspecific subsets of the data. There are two types of inherited metadata:\n\n1. Sidecar files, which contain metadata that pertains to one specific datafile. These sidecars\nmust have the exact same name as their corresponding datafile, with the \".json\" extension instead \nof the \".csv\" extension. Sidecars must occupy the same directory as their datafile.\n2. Directory metadata, which always takes the form \"file_metadata.json\". The metadata contained in\nsuch files apply to all datafiles within its directory and all subdirectories thereof.\n\nMetadata key/value pairs found in higher-level JSON files are inherited by all lower levels unless they are explicitly \noverridden by a file at the lower level.\n\nFor example, suppose we have the following project structure:\n\ndata/\n  file_metadata.json\n  subject-1/\n    file_metadata.json\n    subject-1_condition-A_data.csv\n    subject-1_condition-B_data.json\n    subject-1_condition-B_data.csv\n  subject-2/\n    subject-2_condition-A_data.json\n    subject-2_condition-A_data.csv\n    subject-2_condition-B_data.csv\n\nThere are 4 datafiles within the data/ hierarchy; let's consider which metadata files apply to each one, and in what order \nthe metadata files should be processed/inherited:\n - data/subject-1/subject-1_condition-A_data.csv: There is no JSON sidecar for this file. \n   However, there is a file_metadata.json file in the same directory as the data file, \n   as well as in one above it. The consolidated metadata object would start with the \n   contents of the higher-level file (data/file_metadata.json), and then update it with \n   the contents of the lower-level file (data/subject-1/file_metadata.json).\n - data/subject-1/subject-1_condition-B_data.csv: The same process unfolds as for the previous \n   file; however, the consolidated object is now further updated with the contents of the target \n   data file\u2019s JSON sidecar (i.e., subject-1_condition-B_data.json).\n - data/subject-2/subject-2_condition-A_data.csv: The contents of data/file_metadata.json \n   are read, and then updated with the contents of data/subject-2/subject-2_condition-A_data.json.\n - data/subject-2/subject-2_condition-B_data.csv: There is only a single applicable metadata \n   file (data/file_metadata.json), from which all metadata is read.\n\nNote that any inherited key/value pair from a metadata file replaces the value for the key wholesale,\nand there is no merging processed involved. For instance, if the root metadata file contains a \"variableMeasured\"\nproperty with 10 elements, and a lower level metadata file contains a \"variableMeasured\" property with\n5 elements, the resulting inherited object will only contain the 5 \"variableMeasured\" elements\nfrom the inherited metadata. The lists are not combined in any way, but replaced."
             }
         },
         "metadata": {
@@ -262,7 +314,7 @@
             "DataFile": {
                 "display_name": "CSV Datafile",
                 "file_type": "regular",
-                "description": "A CSV file under the /data directory in which the official psych-DS compliant data from\nthe dataset is stored.\n"
+                "description": "A CSV file under the /data directory in which the official psych-DS compliant data from\nthe dataset is stored. Datafiles must follow Psych-DS file naming conventions, which includes\nthe use of keyword formatting, the \"_data\" suffix, and the \".csv\" extension. An example of a valid datafile\nmight be \"study-123_site-lab4_data.csv\". In the future, more official suffices and extensions may be made available. \nA controlled list of official keywords is provided, but the use of unofficial keywords is permitted, so long as they are \nclearly defined and used consistently within a research community.\n"
             },
             "data": {
                 "display_name": "Data",
@@ -277,7 +329,7 @@
             "analysis": {
                 "display_name": "Analysis",
                 "file_type": "directory",
-                "description": "Code or other tools used to analyze the data/ files in order to describe and interpret the dataset. \nAny intermediate data files created during analysis SHOULD be output to a new file in data/ \n(i.e. primary_data/ files SHOULD NOT be modified.) \n"
+                "description": "A directory to store code or other tools used to analyze the data/ files in order to describe and interpret the dataset. \nAny intermediate data files created during analysis SHOULD be output to a new file in data/ \n(i.e. primary_data/ files SHOULD NOT be modified.) \n"
             },
             "results": {
                 "display_name": "Results",
@@ -345,6 +397,7 @@
                     },
                     "README": {
                         "level": "warning",
+                        "baseDir": "/",
                         "stem": "README",
                         "extensions": [
                             ".md",
@@ -355,6 +408,7 @@
                     },
                     "CHANGES": {
                         "level": "ignore",
+                        "baseDir": "/",
                         "stem": "CHANGES",
                         "extensions": [
                             ".md",

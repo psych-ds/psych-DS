@@ -44,11 +44,68 @@ context:
     level:
       type: string
       description: |
-        This property describes the severity of a rule:
+        Property describing the severity of a rule. Only the following values are used:
 
         - error: failure to satisfy this rule results in an invalid dataset
         - warning: failure to satisfy this rule results in a warning, which is displayed when the --showWarnings flag is used
         - ignore: failure to satisfy this rule has no effect.
+    code: 
+      type: string
+      description: |
+        Unique code identifying a specific error/warning 
+    reason:
+      type: string
+      description: |
+        paragraph accompanying an error/warning that provides context for what may cause it.
+    directory:
+      type: boolean
+      description: |
+        Indicator for whether a given object is expected to be a directory or a file.
+    arbitraryNesting:
+      type: boolean
+      description: |
+        Indicator for whether a given file object is allowed to be nested within an arbitrary number of subdirectories.
+    usesKeywords:
+      type: boolean
+      description: |
+        Indicator for whether a given file object requires keyword formatting.
+    nonCanonicalKeywordsAllowed:
+      type: boolean
+      description: |
+        Indicator for whether a given file object is required to use only official Psych-DS keywords
+    fileRegex:
+      type: regular expression
+      description: |
+        Regular expression defining the legal formatting of a filename.
+    baseDir:
+      type: string
+      description: |
+        Name of the directory under which the file object is expected to appear.
+    columnsMatchMetadata:
+      type: boolean
+      description: |
+        Indicator for whether a given file object's columns must be enumerated within the metadata under
+        the variableMeasured property
+    fields:
+      type: object
+      description: |
+        Set of key/value pairs defining the fields that are expected to occur in a given file object, 
+        and whether they are required or recommended.
+    namespace:
+      type: string
+      description: |
+       URL identifying the required namespace to be used for required fields in the file object.
+       Namespaces are web prefixes that point to ontologies which contain definitions of semantic vocabularies.
+    jsonld:
+      type: boolean
+      description: |
+        Indicator for whether the given file object is required to be a valid JSON-LD object.
+    containsAllColumns:
+      type: boolean
+      description: |
+
+    
+    
     sidecar:
       description: "Sidecar metadata constructed via the inheritance principle"
       type: object

@@ -12,6 +12,7 @@ dataset_description:
   reason: "It is required to include a 'dataset_description.json' in the base directory"
 README:
   level: warning
+  baseDir: /
   stem: README
   extensions:
     - .md
@@ -20,6 +21,7 @@ README:
   reason: "It is recommended to include a 'README.md' or 'README.txt' file in the base directory"
 CHANGES:
   level: ignore
+  baseDir: /
   stem: CHANGES
   extensions:
     - .md
