@@ -4,6 +4,7 @@
 # The keys of this file must match keys in objects/files.yaml
 dataset_description:
   level: error
+  baseDir: /
   stem: dataset_description
   extensions:
     - .json

@@ -335,6 +335,7 @@
                 "core": {
                     "dataset_description": {
                         "level": "error",
+                        "baseDir": "/",
                         "stem": "dataset_description",
                         "extensions": [
                             ".json"
