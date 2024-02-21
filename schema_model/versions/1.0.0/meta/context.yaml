@@ -41,11 +41,19 @@ context:
     extension:
       description: 'Extension of current file including initial dot'
       type: string
+    level:
+      type: string
+      description: |
+        This property describes the severity of a rule:
+
+        - error: failure to satisfy this rule results in an invalid dataset
+        - warning: failure to satisfy this rule results in a warning, which is displayed when the --showWarnings flag is used
+        - ignore: failure to satisfy this rule has no effect.
     sidecar:
       description: "Sidecar metadata constructed via the inheritance principle"
       type: object
     columns:
-      description: "TSV columns, indexed by column header, values are arrays with column contents"
+      description: "CSV columns, indexed by column header, values are arrays with column contents"
       type: object
       additionalProperties:
         type: array

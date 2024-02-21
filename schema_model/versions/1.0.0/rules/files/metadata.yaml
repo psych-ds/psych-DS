@@ -1,5 +1,7 @@
 DirectoryMetadata:
-  path: "file_metadata.json"
+  stem: file_metadata
+  extensions:
+    - .json
   baseDir: "data"
   arbitraryNesting: true
   level: warning

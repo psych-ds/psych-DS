@@ -9,7 +9,7 @@ README:
   display_name: README
   file_type: regular
   description: |
-    File describing the dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset.
+    Human-readable file describing the project and dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset.
 dataset_description:
   display_name: Dataset Description
   file_type: regular
@@ -26,11 +26,18 @@ data:
   file_type: directory
   description: |
     The directory in which to store all datafiles from the dataset.
+primary_data:
+  display_name: Primary data
+  file_type: directory
+  description: |
+    A subfolder holding the primary data, which may be either Psych-DS compliant CSV or some other file type
 analysis:
   display_name: Analysis
   file_type: directory
   description: |
-    A directory in which to store any code used to analyze the data in /data.
+    Code or other tools used to analyze the data/ files in order to describe and interpret the dataset. 
+    Any intermediate data files created during analysis SHOULD be output to a new file in data/ 
+    (i.e. primary_data/ files SHOULD NOT be modified.) 
 results:
   display_name: Results
   file_type: directory

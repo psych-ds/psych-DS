@@ -42,12 +42,16 @@
                         "description": "Extension of current file including initial dot",
                         "type": "string"
                     },
+                    "level": {
+                        "type": "string",
+                        "description": "This property describes the severity of a rule:\n\n- error: failure to satisfy this rule results in an invalid dataset\n- warning: failure to satisfy this rule results in a warning, which is displayed when the --showWarnings flag is used\n- ignore: failure to satisfy this rule has no effect.\n"
+                    },
                     "sidecar": {
                         "description": "Sidecar metadata constructed via the inheritance principle",
                         "type": "object"
                     },
                     "columns": {
-                        "description": "TSV columns, indexed by column header, values are arrays with column contents",
+                        "description": "CSV columns, indexed by column header, values are arrays with column contents",
                         "type": "object",
                         "additionalProperties": {
                             "type": "array"
@@ -128,6 +132,26 @@
                 "name": "Keywords",
                 "display_name": "Keywords",
                 "description": "A set of identifying key-value duples associated with a given data file.\nKeys are limited to a vocabulary of:\n  - study\n  - site\n  - subject\n  - session\n  - task\n  - condition\n  - trial\n  - stimulus\n  - description\n"
+            },
+            "raw_data": {
+                "name": "Raw data",
+                "display_name": "Raw data",
+                "description": "A central principle for Psych-DS is that the earliest form of the data you have access to should always be saved, \nshould never be modified, and should be kept separate from any additional versions created. This data could take any form,\nsuch as physical paper and pencil surveys, digital resources such as videos, etc. At a minimum, it is assumed that a psych-DS\ncompliant dataset will contain this original data under the /data directory.\n"
+            },
+            "primary_data": {
+                "name": "Primary data",
+                "display_name": "Primary data",
+                "description": "Primary data is considered the first digitized form of the raw data. Sometimes, the primary data and the raw data are the same,\nin the case, for instance, of tabular online survey responses. If the raw data exists in a physical format, then some digitized \nversion must be included in the dataset.\n"
+            },
+            "columns": {
+                "name": "Columns",
+                "display_name": "Columns",
+                "description": "In general, Psych-DS has minimal restraints and conventions regarding column names. \nWe RECOMMEND that you use the controlled keywords defined elsewhere in the standard plus \"_id\"\nas column names if referring to the relevant information in a dataset. (That is, if you record trials\nwith the scope of a given datafile, we RECOMMEND that the name of the column identifying the trial\nbe \"trial_id\"). This information can be redundantly stored (i.e., a file named \"study-MyExp_trial-1_data.csv\"\ncan also have a column \"trial_id\" which has rows with the value \"1\").\n\nIn many cases, some combination of columns will uniquely identify every row in the dataset (for instance,\neach participant might have several rows, but there might be exactly one row for every combination of \nparticupant, condition, and trial.) The column or set of columns provides a unique key for every record/row in\nyour dataset. We RECOMMEND that you include a description of which columns create a unique key for your dataset\nin the README for your project.\n\nIf you have a column that uniquely identifies each single row of a dataset explicitly it SHOULD be named\n\"row_id\". A column named \"row_id\" MUST contain unique values in every row.\n"
+            },
+            "inheritance": {
+                "name": "Inheritance",
+                "display_name": "Inheritance",
+                "description": "In addition to the mandatory \"dataset_description.json\" file at the root of the dataset,\nPsych-DS allows for the inclusion of additional metadata files, whose fields apply to \nspecific subsets of the data. There are two types of inherited metadata:\n\n1. Sidecar files, which contain metadata that pertains to one specific datafile. These sidecars\nmust have the exact same name as their corresponding datafile, with the \".json\" extension instead \nof the \".csv\" extension. Sidecars must occupy the same directory as their datafile.\n2. Directory metadata, which always takes the form \"file_metadata.json\". The metadata contained in\nsuch files apply to all datafiles within its directory and all subdirectories thereof.\n\nMetadata key/value pairs found in higher-level JSON files are inherited by all lower levels unless they are explicitly \noverridden by a file at the lower level.\n\nFor example, suppose we have the following project structure:\n\ndataset_description.json\ndata/\n  file_metadata.json\n  subject-1/\n    file_metadata.json\n    subject-1_condition-A_data.csv\n    subject-1_condition-B_data.json\n    subject-1_condition-B_data.csv\n  subject-2/\n    subject-2_condition-A_data.json\n    subject-2_condition-A_data.csv\n    subject-2_condition-B_data.csv\n"
             }
         },
         "metadata": {
@@ -216,7 +240,7 @@
             "csv": {
                 "value": ".csv",
                 "display_name": "Comma-Separated Values",
-                "description": "A CSV file with a header row of column names spanning all filled columns."
+                "description": "A CSV file with a header row of column names spanning all filled columns. In Psych-DS,\nCSV files have the following rules related to their formatting:\n- Each CSV file MUST start with a header line listing the names of all columns. Names MUST be separated with commas.\n- String values containing commas MUST be escaped using double quotes\n- UTF-8 encoding MUST be used\n- using . rather than , for decimals is RECOMMENDED"
             }
         },
         "files": {
@@ -228,7 +252,7 @@
             "README": {
                 "display_name": "README",
                 "file_type": "regular",
-                "description": "File describing the dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset.\n"
+                "description": "Human-readable file describing the project and dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset.\n"
             },
             "dataset_description": {
                 "display_name": "Dataset Description",
@@ -245,10 +269,15 @@
                 "file_type": "directory",
                 "description": "The directory in which to store all datafiles from the dataset.\n"
             },
+            "primary_data": {
+                "display_name": "Primary data",
+                "file_type": "directory",
+                "description": "A subfolder holding the primary data, which may be either Psych-DS compliant CSV or some other file type\n"
+            },
             "analysis": {
                 "display_name": "Analysis",
                 "file_type": "directory",
-                "description": "A directory in which to store any code used to analyze the data in /data.\n"
+                "description": "Code or other tools used to analyze the data/ files in order to describe and interpret the dataset. \nAny intermediate data files created during analysis SHOULD be output to a new file in data/ \n(i.e. primary_data/ files SHOULD NOT be modified.) \n"
             },
             "results": {
                 "display_name": "Results",
@@ -306,7 +335,10 @@
                 "core": {
                     "dataset_description": {
                         "level": "error",
-                        "path": "/dataset_description.json",
+                        "stem": "dataset_description",
+                        "extensions": [
+                            ".json"
+                        ],
                         "code": "MISSING_DATASET_DESCRIPTION",
                         "reason": "It is required to include a 'dataset_description.json' in the base directory"
                     },
@@ -369,7 +401,10 @@
             },
             "metadata": {
                 "DirectoryMetadata": {
-                    "path": "file_metadata.json",
+                    "stem": "file_metadata",
+                    "extensions": [
+                        ".json"
+                    ],
                     "baseDir": "data",
                     "arbitraryNesting": true,
                     "level": "warning",
@@ -392,7 +427,9 @@
         "dataset_metadata": {
             "dataset_description": {
                 "selectors": [
-                    "path == \"dataset_description.json\""
+                    "stem == \"dataset_description\"",
+                    "extension == \".json\"",
+                    "baseDir == \"/\""
                 ],
                 "fields": {
                     "name": "required",
@@ -561,7 +598,7 @@
                     "suffix == \"data\"",
                     "baseDir == \"data\""
                 ],
-                "columns": true
+                "columnsMatchMetadata": true
             }
         }
     }
