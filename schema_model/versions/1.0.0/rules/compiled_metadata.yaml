@@ -1,9 +1,9 @@
 ---
-dataset_description:
+compiled_metadata:
   selectors:
-    - stem == "dataset_description"
-    - extension == ".json"
-    - baseDir == "/"
+    - suffix == "data"
+    - extension == ".csv"
+    - baseDir == "data"
   fields:
     name: required
     description: required
