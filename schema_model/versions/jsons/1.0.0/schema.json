@@ -389,6 +389,7 @@
                         "level": "error",
                         "baseDir": "/",
                         "stem": "dataset_description",
+                        "arbitraryNesting": false,
                         "extensions": [
                             ".json"
                         ],
@@ -399,6 +400,7 @@
                         "level": "warning",
                         "baseDir": "/",
                         "stem": "README",
+                        "arbitraryNesting": false,
                         "extensions": [
                             ".md",
                             ".txt"
@@ -410,6 +412,7 @@
                         "level": "ignore",
                         "baseDir": "/",
                         "stem": "CHANGES",
+                        "arbitraryNesting": false,
                         "extensions": [
                             ".md",
                             ".txt"

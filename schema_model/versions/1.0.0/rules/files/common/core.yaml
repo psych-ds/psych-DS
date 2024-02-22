@@ -6,6 +6,7 @@ dataset_description:
   level: error
   baseDir: /
   stem: dataset_description
+  arbitraryNesting: false
   extensions:
     - .json
   code: "MISSING_DATASET_DESCRIPTION"
@@ -14,6 +15,7 @@ README:
   level: warning
   baseDir: /
   stem: README
+  arbitraryNesting: false
   extensions:
     - .md
     - .txt
@@ -23,6 +25,7 @@ CHANGES:
   level: ignore
   baseDir: /
   stem: CHANGES
+  arbitraryNesting: false
   extensions:
     - .md
     - .txt
