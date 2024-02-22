@@ -1,0 +1,12 @@
+Datafile:
+  suffix: "data"
+  extensions:
+    - ".csv"
+  baseDir: "data"
+  arbitraryNesting: true
+  usesKeywords: true
+  nonCanonicalKeywordsAllowed: true
+  fileRegex: '([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv'
+  code: "MISSING_DATAFILE"
+  level: error
+  reason: "It is required to include at least one valid csv datafile under the data subdirectory "
