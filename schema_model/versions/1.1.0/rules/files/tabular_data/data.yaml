@@ -4,6 +4,7 @@ Datafile:
     - ".csv"
   baseDir: "data"
   arbitraryNesting: true
+  columnsMatchMetadata: true
   usesKeywords: true
   nonCanonicalKeywordsAllowed: true
   fileRegex: '([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv'
