@@ -525,7 +525,7 @@
                     "extension == \".json\""
                 ],
                 "requires": [
-                    "rules.files.common.dataset_description"
+                    "rules.files.common.core.dataset_description"
                 ]
             },
             "JsonKeyRequired": {
@@ -533,7 +533,7 @@
                 "level": "error",
                 "reason": "The metadata object is missing a key listed as required.",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -542,7 +542,7 @@
                 "level": "warning,",
                 "reason": "The metadata object is missing a key listed as recommended.",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -551,7 +551,7 @@
                 "level": "error",
                 "reason": "A required column is missing",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -620,7 +620,7 @@
                 "level": "error",
                 "reason": "One of your metadata files in not in valid JSON format.",
                 "requires": [
-                    "rules.files.common.dataset_description"
+                    "rules.files.common.core.dataset_description"
                 ]
             },
             "IncorrectDatasetType": {
@@ -628,7 +628,7 @@
                 "level": "error",
                 "reason": "Your metadata is missing the required schema.org \"Dataset\" type",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -637,7 +637,7 @@
                 "level": "error",
                 "reason": "Your metadata is missing the \"@type/type\" property, which is required.",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -646,7 +646,7 @@
                 "level": "warning",
                 "reason": "The psych-DS validator only has access to one external vocabulary, \"http://schema.org\";\nany other reference to an external schema is permitted, but the validity of the terms used\ncannot be confirmed.\n",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -655,7 +655,7 @@
                 "level": "warning",
                 "reason": "For compliance with the schema.org ontology, all objects within the metadata (with a few exceptions)\nthat appear as the value of a schema.org key/property must contain a \"@type\" key with a valid schema.org type \nas its value.\n",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -664,7 +664,7 @@
                 "level": "warning",
                 "reason": "The schema.org ontology contains a fixed set of legal properties which can be applied to objects within the metadata.\n If schema.org is used as the only @context within your metadata, then all properties will be interpreted as schema.org properties.\n Using an invalid schema.org property is not considered an error in the psych-DS specification, but it should be understood\n that such usages result in the property in question not being interpretable by machines.\n",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
@@ -673,7 +673,7 @@
                 "level": "warning",
                 "reason": "Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values.\nincluding an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS,\nbut it will result in the object in question not being interpretable by machines.\n",
                 "requires": [
-                    "rules.files.common.dataset_description",
+                    "rules.files.common.core.dataset_description",
                     "rules.files.tabular_data.data.Datafile"
                 ]
             },
