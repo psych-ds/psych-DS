@@ -5,6 +5,7 @@ JsonInvalid:
   level: error
   selectors:
     - extension == ".json"
+  requires: []
 FileRead:
   code: FILE_READ
   reason: |
@@ -12,11 +13,13 @@ FileRead:
     Make sure it contains data (file size > 0 kB) and is not corrupted,
     incorrectly named, or incorrectly symlinked.
   level: error
+  requires: []
 EmptyFile:
   code: EMPTY_FILE
   reason: |
     Empty files not allowed.
   level: error
+  requires: []
 InvalidJsonEncoding:
   code: INVALID_JSON_ENCODING
   reason: |
@@ -55,14 +58,17 @@ NotIncluded:
     Under the rules of psych-DS, non-specified files are allowed to be included,
     but if you would like to avoid receiving this warning moving forward, you can include
     in your ".psychdsignore" file
+  requires: []
 MissingRequiredElement:
   code: MISSING_REQUIRED_ELEMENT
   level: error
   reason: Your dataset is missing an element that is required under the psych-DS specification.
+  requires: []
 EmptyFile:
   code: EMPTY_FILE
   level: error
   reason: empty files not allowed.
+  requires: []
 NoHeader:
   code: NO_HEADER
   level: error
@@ -85,6 +91,7 @@ WrongMetadataLocation:
   code: WRONG_METADATA_LOCATION
   level: warning
   reason: The main metadata file must be located within the root directory
+  requires: []
 KeywordFormattingError:
   code: KEYWORD_FORMATTING_ERROR
   level: error
@@ -94,6 +101,7 @@ KeywordFormattingError:
     alphabetic characters and values using any alphanumeric characters of either case. The file must
     end with '_data.csv'. In other words, files must follow this regex: 
     /([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv/
+  requires: []
 UnofficialKeywordWarning:
   code: UNOFFICIAL_KEYWORD_WARNING
   level: warning
@@ -101,10 +109,12 @@ UnofficialKeywordWarning:
     Although it is not recommended, datafiles are permitted to use keywords other than those provided
     in the official psych-DS specification. If you do choose to use unofficial keywords, please ensure
     that they are clearly defined within your research community and used consistently across relevant datasets.
+  requires: []
 UnofficialKeywordError:
   code: UNOFFICIAL_KEYWORD_ERROR
   level: error
   reason: Names for data files must not include keywords other than those listed in the psych-DS schema.
+  requires: []
 InvalidJsonFormatting:
   code: INVALID_JSON_FORMATTING
   level: error
@@ -171,3 +181,4 @@ ExtensionMismatch:
   level: error
   reason: |
     Extension used by file does not match allowed extensions for its suffix.
+  requires: []

@@ -502,17 +502,20 @@
                 "level": "error",
                 "selectors": [
                     "extension == \".json\""
-                ]
+                ],
+                "requires": []
             },
             "FileRead": {
                 "code": "FILE_READ",
                 "reason": "We were unable to read this file.\nMake sure it contains data (file size > 0 kB) and is not corrupted,\nincorrectly named, or incorrectly symlinked.\n",
-                "level": "error"
+                "level": "error",
+                "requires": []
             },
             "EmptyFile": {
                 "code": "EMPTY_FILE",
                 "level": "error",
-                "reason": "empty files not allowed."
+                "reason": "empty files not allowed.",
+                "requires": []
             },
             "InvalidJsonEncoding": {
                 "code": "INVALID_JSON_ENCODING",
@@ -555,12 +558,14 @@
             "NotIncluded": {
                 "code": "NOT_INCLUDED",
                 "level": "warning",
-                "reason": "Files with such naming scheme are not part of psych-DS specification.\nUnder the rules of psych-DS, non-specified files are allowed to be included,\nbut if you would like to avoid receiving this warning moving forward, you can include\nin your \".psychdsignore\" file\n"
+                "reason": "Files with such naming scheme are not part of psych-DS specification.\nUnder the rules of psych-DS, non-specified files are allowed to be included,\nbut if you would like to avoid receiving this warning moving forward, you can include\nin your \".psychdsignore\" file\n",
+                "requires": []
             },
             "MissingRequiredElement": {
                 "code": "MISSING_REQUIRED_ELEMENT",
                 "level": "error",
-                "reason": "Your dataset is missing an element that is required under the psych-DS specification."
+                "reason": "Your dataset is missing an element that is required under the psych-DS specification.",
+                "requires": []
             },
             "NoHeader": {
                 "code": "NO_HEADER",
@@ -589,22 +594,26 @@
             "WrongMetadataLocation": {
                 "code": "WRONG_METADATA_LOCATION",
                 "level": "warning",
-                "reason": "The main metadata file must be located within the root directory"
+                "reason": "The main metadata file must be located within the root directory",
+                "requires": []
             },
             "KeywordFormattingError": {
                 "code": "KEYWORD_FORMATTING_ERROR",
                 "level": "error",
-                "reason": "All datafiles must use psych-DS keyword formatting. That is, datafile names must consist of\na series of keyword-value pairs, separated by underscores, with keywords using only lowercase\nalphabetic characters and values using any alphanumeric characters of either case. The file must\nend with '_data.csv'. In other words, files must follow this regex: \n/([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\\.csv/\n"
+                "reason": "All datafiles must use psych-DS keyword formatting. That is, datafile names must consist of\na series of keyword-value pairs, separated by underscores, with keywords using only lowercase\nalphabetic characters and values using any alphanumeric characters of either case. The file must\nend with '_data.csv'. In other words, files must follow this regex: \n/([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\\.csv/\n",
+                "requires": []
             },
             "UnofficialKeywordWarning": {
                 "code": "UNOFFICIAL_KEYWORD_WARNING",
                 "level": "warning",
-                "reason": "Although it is not recommended, datafiles are permitted to use keywords other than those provided\nin the official psych-DS specification. If you do choose to use unofficial keywords, please ensure\nthat they are clearly defined within your research community and used consistently across relevant datasets.\n"
+                "reason": "Although it is not recommended, datafiles are permitted to use keywords other than those provided\nin the official psych-DS specification. If you do choose to use unofficial keywords, please ensure\nthat they are clearly defined within your research community and used consistently across relevant datasets.\n",
+                "requires": []
             },
             "UnofficialKeywordError": {
                 "code": "UNOFFICIAL_KEYWORD_ERROR",
                 "level": "error",
-                "reason": "Names for data files must not include keywords other than those listed in the psych-DS schema."
+                "reason": "Names for data files must not include keywords other than those listed in the psych-DS schema.",
+                "requires": []
             },
             "InvalidJsonFormatting": {
                 "code": "INVALID_JSON_FORMATTING",
@@ -671,7 +680,8 @@
             "ExtensionMismatch": {
                 "code": "EXTENSION_MISMATCH",
                 "level": "error",
-                "reason": "Extension used by file does not match allowed extensions for its suffix."
+                "reason": "Extension used by file does not match allowed extensions for its suffix.\n",
+                "requires": []
             }
         },
         "common_principles": [
