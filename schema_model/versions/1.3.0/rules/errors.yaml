@@ -12,13 +12,6 @@ FileRead:
     Make sure it contains data (file size > 0 kB) and is not corrupted,
     incorrectly named, or incorrectly symlinked.
   level: error
-JsonSchemaValidationError:
-  code: JSON_SCHEMA_VALIDATION_ERROR
-  reason: |
-    Invalid JSON file. The file is not formatted according the schema.
-  level: error
-  selectors:
-    - extension == ".json"
 EmptyFile:
   code: EMPTY_FILE
   reason: |
@@ -31,18 +24,29 @@ InvalidJsonEncoding:
   level: error
   selectors:
     - extension == ".json"
+  requires: 
+    - rules.files.common.dataset_description
 JsonKeyRequired:
   code: JSON_KEY_REQUIRED
   level: error
-  reason: The dataset_description.json file is missing a key listed as required.
+  reason: The metadata object is missing a key listed as required.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 JsonKeyRecommended:
   code: JSON_KEY_RECOMMENDED
   level: warning,
-  reason: A data files JSON sidecar is missing a key listed as recommended.
+  reason: The metadata object is missing a key listed as recommended.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 CsvColumnMissing: 
   code: CSV_COLUMN_MISSING
   level: error
   reason: A required column is missing
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 NotIncluded:
   code: NOT_INCLUDED
   level: warning
@@ -63,14 +67,20 @@ NoHeader:
   code: NO_HEADER
   level: error
   reason: CSV data files must contain a valid header with at least one column.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
 HeaderRowMismatch:
   code: HEADER_ROW_MISMATCH
   level: error
   reason: The header and all rows for CSV data files must contain the same number of columns.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
 RowidValuesNotUnique:
   code: ROWID_VALUES_NOT_UNIQUE
   level: error
   reason: Columns within CSV data files with the header "row_id" must contain unique values in every row.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
 WrongMetadataLocation:
   code: WRONG_METADATA_LOCATION
   level: warning
@@ -99,14 +109,22 @@ InvalidJsonFormatting:
   code: INVALID_JSON_FORMATTING
   level: error
   reason: One of your metadata files in not in valid JSON format.
+  requires: 
+    - rules.files.common.dataset_description
 IncorrectDatasetType:
   code: INCORRECT_DATASET_TYPE
   level: error
   reason: Your metadata is missing the required schema.org "Dataset" type
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 MissingDatasetType:
   code: MISSING_DATASET_TYPE
   level: error
   reason: Your metadata is missing the "@type/type" property, which is required.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 UnknownNamespace:
   code: UNKNOWN_NAMESPACE
   level: warning
@@ -114,6 +132,9 @@ UnknownNamespace:
     The psych-DS validator only has access to one external vocabulary, "http://schema.org";
     any other reference to an external schema is permitted, but the validity of the terms used
     cannot be confirmed.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 ObjectTypeMissing:
   code: OBJECT_TYPE_MISSING
   level: warning
@@ -121,6 +142,9 @@ ObjectTypeMissing:
     For compliance with the schema.org ontology, all objects within the metadata (with a few exceptions)
     that appear as the value of a schema.org key/property must contain a "@type" key with a valid schema.org type 
     as its value.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 InvalidSchemaorgProperty:
   code: INVALID_SCHEMAORG_PROPERTY
   level: warning
@@ -129,6 +153,9 @@ InvalidSchemaorgProperty:
       If schema.org is used as the only @context within your metadata, then all properties will be interpreted as schema.org properties.
       Using an invalid schema.org property is not considered an error in the psych-DS specification, but it should be understood
       that such usages result in the property in question not being interpretable by machines.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 InvalidObjectType:
   code: INVALID_OBJECT_TYPE
   level: warning
@@ -136,6 +163,9 @@ InvalidObjectType:
     Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values.
     including an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS,
     but it will result in the object in question not being interpretable by machines.
+  requires: 
+    - rules.files.common.dataset_description
+    - rules.files.tabular_data.data.Datafile
 ExtensionMismatch:
   code: EXTENSION_MISMATCH
   level: error
