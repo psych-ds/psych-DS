@@ -1,0 +1,53 @@
+# Psych-DS
+
+Psych-DS is a community data standard, providing a systematic way of formatting and documenting scientific datasets. It is heavily inspired by the [Brain Image Data Structure (BIDS)](https://bids.neuroimaging.io/) standard for fMRI data.
+
+## Motivation
+Studies in the social and behavioral sciences result in datasets that can be arranged in many different ways and in many different file formats. So far, there is no consensus about how to organize and share data obtained in these projects. Even two researchers working in the same lab can opt to arrange their data in a different way. Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure, and hampers creation of software tools for discovering or searching among existing datasets. Psych-DS provides a simple and easy-to-adopt way of organizing psychological and behavioral data, which aims to satisfy [FAIR principles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4792175/) for data sharing. 
+
+Critically, there are two goals for this standard: (1) we wish to promote the adoption of good practices in the management of scientific data by individual working scientists and (2) we wish to create a machine-readable format for these datasets that can support tools for analysis, discovery, and preparation of datasets in psychology. 
+
+## Structure
+The full set of rules and specifications that comprise Psych-DS, referred to as the Psych-DS "schema", can be found in [Psych-DS Rules and Conventions](link), and guidance on creating your own Psych-DS dataset can be found in [Getting Started with Psych-DS](link). 
+
+For a more structured, technical reference, you can check out the [official schema model](link), which makes use of the [linkML modeling framework](link). This is the resource that our validator apps reference when determining if a dataset is compliant with our standard. A corresponding Markdown representation of the schema can be found within within the [Schema Reference](link) section of the docs. 
+
+For the most part, the Psych-DS schema is concerned with (1) metadata practices and (2) folder/file conventions. The following information delves into these concepts in the abstract; more detailed technical information can be found in the resources listed above.
+
+### 1. Metadata
+
+The purpose of metadata is to provide rich contextual information about the provenance and contents of a digital artifact. 
+    
+Without good metadata practices, context might be provided on an ad-hoc basis. For instance, a researcher may share a compressed folder full of CSV files to another researcher and say "here are the results of XYZ experiment. Each file contains the responses from a given participant, and unique participant id's are reflected in the file names." This certainly provides some of the necessary context, but now that context lives in the body of an email, and if the researcher who received it wants to share it elsewhere, they'll have to restate the context or forward the email wholesale.
+
+Alternatively, if the researcher were to include a metadata file in the folder, they could use it to enumerate the relevant context in a way that remains permanently attached to the data it describes. The metadata file could provide information about the researchers who conducted the study, the site where data was collected, the publication that resulted from it, etc. With good metadata, the dataset becomes a *self-describing object*, and now the reseacher could simply share the compressed folder and to their colleague and say "hey, check this out", and all the necessary context would be contained within the folder.
+
+In its most richly informative form (and this is what Psych-DS facilitates), metadata not only provides human-readable context, but context that is structured in such a way that it can be accessed and interpreted by machines, including search engines, digital agents, and cataloguing systems. If the researcher observes standardized conventions regarding the name, location, and structure of metadata files, then machines can locate information about the dataset without any human intervention. Additionally, By using standardized ["semantic vocabularies"](link) such as [Schema.org](link) (which provide unambiguous, conventional defitions of useful concepts such as "Dataset", "name", "author", "variableMeasured", etc.) researchers can provide information about their dataset that machines can not only locate and access, but *interpret*.
+
+To facilitate these ideal metadata practices, Psych-DS requires researchers to include a global metadata file named "dataset_description.json", using [JSON-LD formatting](link), a common standard for [linked data](link). The schema specifies a number of required/recommended fields to include in this file, all of which are derived, as mentioned, from the Schema.org ontology. This gives researchers the freedom to include metadata files ranging from [minimal and satisfactory](link) to [richly informative and structured](link).
+
+### 2. Folder/File Conventions
+In addition to providing context for a dataset in the form of rich, conventionally structured metadata, we also want to ensure that the actual contents of our dataset (the data files) are able to be located/identified without any human guidance. 
+
+Without the help of clear folder/file conventions, researchers structure their datasets in an idiosyncratic, ad-hoc manner. One researcher may store all of their data files in one big pile under the root directory. Others may have the common sense to separate their data files and supplementary materials into separate subdirectories, but may name their subdirectory for data files on a whim, choosing something like "data/", "study_data/", "data_dir/", etc. Additionally, the contents of these data directories may contain a mixture of files in various formats, states of pre-/post-processing, etc., making it unclear which files are meant to be the "canonical" contents of the dataset. 
+    
+For a human, it's easy to navigate and interpret these idiosyncratic structures to locate the files with which they're concerned, but strong conventions for structuring subdirectories and naming files provide crucial benefits for both humans and machines.
+
+Many researchers are familiar with the frustrations involved in running statistical analyses spanning datasets from disparate experiments, labs, or universities. Many precious hours have been wasted either repackaging datasets into a uniform structure or writing bespoke R scripts to manage all the various folder/file conventions. By adopting the Psych-DS schema, individual researchers, labs, and even (ideally) entire research communities can ensure that all of their data is structured in the same way. Doing so minimizes confusion and facilitates the creation of robust, reuseable pipelines for data processing/analysis.
+
+In certain fields, such as neuroscience, the data derived from experiments take the form of complex, idiosyncratically structured physiological measurements often involving highly specified file formats. In such contexts, strong data conventions are much more of a necessity than a convenience, and as such, standards such as [BIDS](link) have been widely adopted. 
+    
+In the behavioral sciences, response data is often structurally simpler but more widely varied, and tabular file formats like CSV and TSV are often sufficient for representating data. In such a context, strong data conventions have taken longer to gain traction, since researchers often see it as easier to compile and re-format datasets ad-hoc than to enforce and adopt community standards. 
+
+By providing a set of minimal, easily adoptable structural standards, Psych-DS provides benefits that far outweigh their cost in terms of adoption. In short, we expect datasets to contain a subdirectory called "data/", which can contain any number of subdirectories within it. "Canonical" data files for the dataset are all found under this directory, easily identifiable by their use of the CSV file format, the "_data" suffix at the end of the filename, and the use of ["keyword"](link) formatting to identify relevant properties of each file. An example of a "canonical" data file might be "data/primary_data/study-1a_participant-145_data.csv".
+
+## Validation
+The Psych-DS team is developing a [suite of applications](link) across multiple frameworks (browser-based, node.js, Python, R) that researchers can use to quickly confirm that their datasets are compliant with our data standard. These validators function as the "ground truth" for Psych-DS compliance, such that any dataset which the validator approves is considered "valid" for all intents and purposes. 
+
+These validator tools all make use of the official [schema model](link) to derive the set of rules/checks that are applied during validation, which means that any updates made to the schema model are immediately reflected across all frameworks. 
+
+For most researchers, the easiest tool to make use of is the[browser-based validator](link), whose usage is self-explanatory, but further guidance can be found at [Using the Psych-DS Validator](link), which also covers how to install the various non-browser implementations as well as how to integrate the tools programmatically into existing pipelines.
+
+The primary function of the validator is to provide an output of either **VALID** or **INVALID**, and any input deemed **INVALID** is accompanied by a full enumeration of the specific errors that were detected, including pointers to the files/fields that produced them. Additionally, if the "showWarnings" flag is selected prior to validation, the tool will provide helpful warnings about elements that are recommended rather than required, which can help researchers go beyond creating datasets that are merely satisfactory and toward the ideal of datasets that are maximally informative and comprehensive.
+
+**DISCLAIMER: the Psych-DS team takes the anonymity and proprietary nature of certain datasets as a primary concern, and as such, all validator tools were designed so that no dataset is ever uploaded or stored in any way during validation. For instance, when using the browser-based tool, datasets that are input for validation are inspected and checked using client-side javascript. No data is ever sent to a web server, and there is no database attached to the application.**
