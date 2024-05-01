@@ -78,6 +78,9 @@ context:
     namespace:
       type: string
       description: URL identifying the required namespace to be used for required fields in the file object. Namespaces are web prefixes that point to ontologies which contain definitions of semantic vocabularies.
+    requires:
+      type: array
+      description: Set of schema locations defining the objects that must be present for certain issues to be reported
     jsonld:
       type: boolean
       description: Indicator for whether the given file object is required to be a valid JSON-LD object.

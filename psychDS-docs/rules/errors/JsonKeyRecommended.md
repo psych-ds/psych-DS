@@ -1,7 +1,7 @@
 # JsonKeyRecommended
 
-[**code**](/Schema Reference/meta/defs/code): JSON_KEY_RECOMMENDED
+[**code**](/en/latest/Schema Reference/meta/defs/code): JSON_KEY_RECOMMENDED
 
-[**level**](/Schema Reference/meta/defs/level): warning,
+[**level**](/en/latest/Schema Reference/meta/defs/level): warning,
 
-[**reason**](/Schema Reference/meta/defs/reason): A data files JSON sidecar is missing a key listed as recommended.
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): The metadata object is missing a key listed as recommended.

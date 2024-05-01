@@ -1,7 +1,7 @@
 # UnofficialKeywordError
 
-[**code**](/Schema Reference/meta/defs/code): UNOFFICIAL_KEYWORD_ERROR
+[**code**](/en/latest/Schema Reference/meta/defs/code): UNOFFICIAL_KEYWORD_ERROR
 
-[**level**](/Schema Reference/meta/defs/level): error
+[**level**](/en/latest/Schema Reference/meta/defs/level): error
 
-[**reason**](/Schema Reference/meta/defs/reason): Names for data files must not include keywords other than those listed in the psych-DS schema.
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): Names for data files must not include keywords other than those listed in the psych-DS schema.

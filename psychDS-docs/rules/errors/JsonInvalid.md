@@ -1,7 +1,7 @@
 # JsonInvalid
 
-[**code**](/Schema Reference/meta/defs/code): JSON_INVALID
+[**code**](/en/latest/Schema Reference/meta/defs/code): JSON_INVALID
 
-[**level**](/Schema Reference/meta/defs/level): error
+[**level**](/en/latest/Schema Reference/meta/defs/level): error
 
-[**reason**](/Schema Reference/meta/defs/reason): Not a valid JSON file.
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): Not a valid JSON file.
