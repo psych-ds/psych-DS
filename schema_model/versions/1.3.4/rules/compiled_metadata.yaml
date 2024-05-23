@@ -16,6 +16,6 @@ CompiledMetadata:
     identifier: recommended
     privacyPolicy: recommended
     keywords: recommended
-  namespace: "http://schema.org/"
+  namespace: "https://schema.org/"
   jsonld: true
   containsAllColumns: true
