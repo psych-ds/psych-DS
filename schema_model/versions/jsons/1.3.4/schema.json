@@ -732,7 +732,7 @@
                     "privacyPolicy": "recommended",
                     "keywords": "recommended"
                 },
-                "namespace": "https://schema.org/",
+                "namespace": "http://schema.org/",
                 "jsonld": true,
                 "containsAllColumns": true
             }
