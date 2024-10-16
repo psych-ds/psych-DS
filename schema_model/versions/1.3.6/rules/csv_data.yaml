@@ -1,0 +1,6 @@
+Datafile:
+  selectors:
+    - extension == ".csv"
+    - suffix == "data"
+    - baseDir == "data"
+  columnsMatchMetadata: true
