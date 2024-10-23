@@ -13,6 +13,6 @@ A directory in which to store any materials used to conduct the study.
 
 [**code**](/en/latest/Schema Reference/meta/defs/code): MISSING_MATERIALS_DIRECTORY
 
-[**level**](/en/latest/Schema Reference/meta/defs/level): ignore
+[**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
 [**reason**](/en/latest/Schema Reference/meta/defs/reason): It is recommended to include subdirectory named 'materials' in the base directory

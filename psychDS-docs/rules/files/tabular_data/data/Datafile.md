@@ -22,4 +22,4 @@ A CSV file under the /data directory in which the official psych-DS compliant da
 
 [**level**](/en/latest/Schema Reference/meta/defs/level): error
 
-[**reason**](/en/latest/Schema Reference/meta/defs/reason): It is required to include at least one valid csv datafile under the data subdirectory
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): No CSV files were found in the data subdirectory (or all of the CSV files found there had a problem - see other error messages.) There must be at least one valid csv datafile under the data/ subdirectory.

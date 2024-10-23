@@ -15,6 +15,6 @@ Version history of the dataset \(describing changes, updates and corrections\) M
 
 [**code**](/en/latest/Schema Reference/meta/defs/code): MISSING_CHANGES_DOC
 
-[**level**](/en/latest/Schema Reference/meta/defs/level): ignore
+[**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
 [**reason**](/en/latest/Schema Reference/meta/defs/reason): It is recommended to include a 'CHANGES.md' or 'CHANGES.txt' file in the base directory

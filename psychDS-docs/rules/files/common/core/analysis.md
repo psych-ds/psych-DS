@@ -13,6 +13,6 @@ A directory to store code or other tools used to analyze the data/ files in orde
 
 [**code**](/en/latest/Schema Reference/meta/defs/code): MISSING_ANALYSIS_DIRECTORY
 
-[**level**](/en/latest/Schema Reference/meta/defs/level): ignore
+[**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
 [**reason**](/en/latest/Schema Reference/meta/defs/reason): It is recommended to include subdirectory named 'analysis' in the base directory

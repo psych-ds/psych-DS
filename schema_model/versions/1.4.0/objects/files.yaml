@@ -7,6 +7,10 @@ README:
   display_name: README
   file_type: regular
   description: Human-readable file describing the project and dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset.
+psychdsignore:
+  display_name: psychdsignore
+  file_type: regular
+  description: List of files and gitignore expressions describing which files in the directory should be ignored by the Psych-DS validator.
 dataset_description:
   display_name: Dataset Description
   file_type: regular

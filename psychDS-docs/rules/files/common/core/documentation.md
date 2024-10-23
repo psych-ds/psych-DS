@@ -13,6 +13,6 @@ A directory in which to store any project-related documentation that is used for
 
 [**code**](/en/latest/Schema Reference/meta/defs/code): MISSING_DOCUMENTATION_DIRECTORY
 
-[**level**](/en/latest/Schema Reference/meta/defs/level): ignore
+[**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
 [**reason**](/en/latest/Schema Reference/meta/defs/reason): It is recommended to include subdirectory named 'documentation' in the base directory

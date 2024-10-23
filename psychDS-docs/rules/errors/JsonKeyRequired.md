@@ -4,4 +4,4 @@
 
 [**level**](/en/latest/Schema Reference/meta/defs/level): error
 
-[**reason**](/en/latest/Schema Reference/meta/defs/reason): The metadata object is missing a key listed as required.
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): The metadata object listed below is missing a required key.

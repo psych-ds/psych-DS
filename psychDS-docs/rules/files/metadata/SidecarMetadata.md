@@ -17,4 +17,4 @@ A json file in which to store metadata that applies to a specific datafile withi
 
 [**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
-[**reason**](/en/latest/Schema Reference/meta/defs/reason): It is optional to include a json metadata file within a data subdirectory that applies to a specific csv datafile within the current directory
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): Optionally, you can provide an additional 'sidecar' metadata file that has the same name as a data file in the same directory (e.g. 'trial-5_data.csv' and 'trial-5_data.json'). It will override dataset_description.json for that specific csv datafile only. For more information on how this "override" works, visit https://psychds-docs.readthedocs.io/en/latest/Schema%20Reference/objects/common_principles/inheritance/

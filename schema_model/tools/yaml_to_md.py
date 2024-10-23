@@ -54,12 +54,13 @@ def gen_rst(this_file,this_dir,context):
                 
 #handle conversion of rule doc 
 def gen_rule_doc(key,val,path,context):
+    print(context['files'])
     doc = snakemd.new_doc()
     doc.add_heading('[{key}]({loc} "{desc}")'.format(key=key,loc='/en/latest/Schema Reference/objects/files/{key}'.format(key=key),desc=context['files'][key]['description']))
     doc.add_raw('### Definition:')
     doc.add_paragraph(context['files'][key]['description'])
     doc.add_raw('### Properties:')
-    doc.add_raw('\n'.join(['- [**{prop}**]({loc} "{desc}"): {value}'.format(prop=prop,loc=context['props'][prop]['loc'],desc=context['props'][prop]['description'],value=str(value)) for prop,value in val.items() if prop not in ['code','reason','level','selectors']]))
+    doc.add_raw('\n'.join(['- [**{prop}**]({loc} "{desc}"): {value}'.format(prop=prop,loc=context['props'][prop]['loc'],desc=context['props'][prop]['description'],value=str(value)) for prop,value in val.items() if prop not in ['code','reason','level','selectors','helpUrl']]))
     #if there's a presence/absence error code, display info
     if 'code' in val:
         doc.add_paragraph('**If file/directory not found**:')

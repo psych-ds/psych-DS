@@ -4,4 +4,4 @@
 
 [**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
-[**reason**](/en/latest/Schema Reference/meta/defs/reason): Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values. including an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS, but it will result in the object in question not being interpretable by machines.
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values. Including an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS, but it will result in the object in question not being interpretable by machines. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.

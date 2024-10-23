@@ -13,6 +13,6 @@ A directory in which to store any results generated using the data in /data.
 
 [**code**](/en/latest/Schema Reference/meta/defs/code): MISSING_RESULTS_DIRECTORY
 
-[**level**](/en/latest/Schema Reference/meta/defs/level): ignore
+[**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
 [**reason**](/en/latest/Schema Reference/meta/defs/reason): It is recommended to include subdirectory named 'results' in the base directory

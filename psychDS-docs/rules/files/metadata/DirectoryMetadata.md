@@ -17,4 +17,4 @@ A json file in which to store metadata that applies to all datafiles within the 
 
 [**level**](/en/latest/Schema Reference/meta/defs/level): warning
 
-[**reason**](/en/latest/Schema Reference/meta/defs/reason): It is optional to include a json metadata file within a data subdirectory that applies to all files within the current directory and its subdirectories
+[**reason**](/en/latest/Schema Reference/meta/defs/reason): Optionally, you can provide an additional metadata file that is named file_metadata.json and overrides dataset_description.json for an entire directory. It will apply to all files within that directory and its subdirectories. For more information on how this "override" works, visit https://psychds-docs.readthedocs.io/en/latest/Schema%20Reference/objects/common_principles/inheritance/
