@@ -1,4 +1,4 @@
-# psych-DS
+# Psych-DS
 
 Psych-DS is a community data standard, providing a systematic way of formatting and documenting scientific datasets. It started as a hackathon at [SIPS](https://improvingpsych.org) 2018, and is heavily inspired by the [Brain Image Data Structure (BIDS)](https://bids.neuroimaging.io/) standard for fMRI data.
 
