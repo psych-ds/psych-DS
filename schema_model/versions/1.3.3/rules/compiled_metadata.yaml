@@ -1,0 +1,21 @@
+---
+CompiledMetadata:
+  selectors:
+    - suffix == "data"
+    - extension == ".csv"
+    - baseDir == "data"
+  fields:
+    name: required
+    description: required
+    variableMeasured: required
+    author: recommended
+    citation: recommended
+    license: recommended
+    funder: recommended
+    url: recommended
+    identifier: recommended
+    privacyPolicy: recommended
+    keywords: recommended
+  namespace: "https://schema.org/"
+  jsonld: true
+  containsAllColumns: true

@@ -1,0 +1,57 @@
+CHANGES:
+  display_name:
+    Changelog
+  file_type: regular
+  description: Version history of the dataset \(describing changes, updates and corrections\) MAY be provided in the form of a 'CHANGES' text file. \(.txt or .md\).
+README:
+  display_name: README
+  file_type: regular
+  description: Human-readable file describing the project and dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset.
+dataset_description:
+  display_name: Dataset Description
+  file_type: regular
+  description: The metadata file 'dataset_description.json' is a JSON file describing the dataset.
+Datafile:
+  display_name: CSV Datafile
+  file_type: regular
+  description: A CSV file under the /data directory in which the official psych-DS compliant data from the dataset is stored. Datafiles must follow Psych-DS file naming conventions, which includes the use of keyword formatting, the '_data' suffix, and the '.csv' extension. An example of a valid datafile might be 'study-123_site-lab4_data.csv'. In the future, more official suffices and extensions may be made available. A controlled list of official keywords is provided, but the use of unofficial keywords is permitted, so long as they are clearly defined and used consistently within a research community.
+data:
+  display_name: Data
+  file_type: directory
+  description: The directory in which to store all datafiles from the dataset.
+primary_data:
+  display_name: Primary data
+  file_type: directory
+  description: A subfolder holding the primary data, which may be either Psych-DS compliant CSV or some other file type
+analysis:
+  display_name: Analysis
+  file_type: directory
+  description: A directory to store code or other tools used to analyze the data/ files in order to describe and interpret the dataset. Any intermediate data files created during analysis SHOULD be output to a new file in data/ \(i.e. primary_data/ files SHOULD NOT be modified.\) 
+results:
+  display_name: Results
+  file_type: directory
+  description: A directory in which to store any results generated using the data in /data.
+materials:
+  display_name: Materials
+  file_type: directory
+  description: A directory in which to store any materials used to conduct the study.
+documentation:
+  display_name: Documentation
+  file_type: directory
+  description: A directory in which to store any project-related documentation that is used for conducting the study \(e.g. consent forms\)
+products:
+  display_name: Products
+  file_type: directory
+  description: A directory in which to store any Any relevant products resulting from the project \(e.g., publications, posters, software descriptions, presentations, etc.\) 
+DirectoryMetadata:
+  display_name: Directory Metadata
+  file_type: regular
+  description: A json file in which to store metadata that applies to all datafiles within the containing directory or within any nested subdirectories. Fields from the file replace the values of the global dataset_description object.
+SidecarMetadata:
+  display_name: Sidecar Metadata
+  file_type: regular
+  description: A json file in which to store metadata that applies to a specific datafile within the containing directory. Fields from the file replace the values of the global dataset_description object, and overwrite any fields shared with the directory metadata.
+CompiledMetadata:
+  display_name: Compiled Metadata
+  file_type: composite
+  description: The metadata object that results from the combination of global metadata and directory- and file-level metadata files according to the rules of inheritance.

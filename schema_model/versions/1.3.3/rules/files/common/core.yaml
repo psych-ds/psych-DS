@@ -1,0 +1,68 @@
+---
+# Core files are files and directories that can be found at the top level
+# of a dataset.
+# The keys of this file must match keys in objects/files.yaml
+dataset_description:
+  level: error
+  baseDir: /
+  stem: dataset_description
+  arbitraryNesting: false
+  extensions:
+    - .json
+  code: "MISSING_DATASET_DESCRIPTION"
+  reason: "It is required to include a 'dataset_description.json' in the base directory"
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/Schema%20Reference/objects/files/dataset_description/
+README:
+  level: warning
+  baseDir: /
+  stem: README
+  arbitraryNesting: false
+  extensions:
+    - .md
+    - .txt
+  code: "MISSING_README_DOC"
+  reason: "It is recommended to include a 'README.md' or 'README.txt' file in the base directory"
+CHANGES:
+  level: warning
+  baseDir: /
+  stem: CHANGES
+  arbitraryNesting: false
+  extensions:
+    - .md
+    - .txt
+  code: "MISSING_CHANGES_DOC"
+  reason: "It is recommended to include a 'CHANGES.md' or 'CHANGES.txt' file in the base directory"
+data:
+  level: error
+  path: /data
+  directory: true
+  requires: dataset_description
+  code: "MISSING_DATA_DIRECTORY"
+  reason: "It is required to include a subdirectory named 'data' in the base directory"
+analysis:
+  level: warning
+  path: /analysis
+  directory: true
+  code: "MISSING_ANALYSIS_DIRECTORY"
+  reason: "It is recommended to include subdirectory named 'analysis' in the base directory"
+
+results:
+  level: warning
+  path: /results
+  directory: true
+  code: "MISSING_RESULTS_DIRECTORY"
+  reason: "It is recommended to include subdirectory named 'results' in the base directory"
+
+materials:
+  level: warning
+  path: /materials
+  directory: true
+  code: "MISSING_MATERIALS_DIRECTORY"
+  reason: "It is recommended to include subdirectory named 'materials' in the base directory"
+
+documentation:
+  level: warning
+  path: /documentation
+  directory: true
+  code: "MISSING_DOCUMENTATION_DIRECTORY"
+  reason: "It is recommended to include subdirectory named 'documentation' in the base directory"

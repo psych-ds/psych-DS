@@ -1,0 +1,190 @@
+JsonInvalid:
+  code: JSON_INVALID
+  reason: |
+    Not a valid JSON file.
+  level: error
+  selectors:
+    - extension == ".json"
+  requires: []
+FileRead:
+  code: FILE_READ
+  reason: |
+    We were unable to read this file.
+    Make sure it contains data (file size > 0 kB) and is not corrupted,
+    incorrectly named, or incorrectly symlinked.
+  level: error
+  requires: []
+EmptyFile:
+  code: EMPTY_FILE
+  reason: |
+    Empty files not allowed.
+  level: error
+  requires: []
+InvalidJsonEncoding:
+  code: INVALID_JSON_ENCODING
+  reason: |
+    JSON files must be valid utf-8.
+  level: error
+  selectors:
+    - extension == ".json"
+  requires: 
+    - rules.files.common.core.dataset_description
+JsonKeyRequired:
+  code: JSON_KEY_REQUIRED
+  level: error
+  reason: The metadata object is missing a key listed as required.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+JsonKeyRecommended:
+  code: JSON_KEY_RECOMMENDED
+  level: warning,
+  reason: The metadata object is missing a key listed as recommended.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+CsvColumnMissing: 
+  code: CSV_COLUMN_MISSING
+  level: error
+  reason: A required column is missing
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+NotIncluded:
+  code: NOT_INCLUDED
+  level: warning
+  reason: |
+    Files with such naming scheme are not part of psych-DS specification.
+    Under the rules of psych-DS, non-specified files are allowed to be included,
+    but if you would like to avoid receiving this warning moving forward, you can include
+    in your ".psychdsignore" file
+  requires: []
+MissingRequiredElement:
+  code: MISSING_REQUIRED_ELEMENT
+  level: error
+  reason: Your dataset is missing an element that is required under the psych-DS specification.
+  requires: []
+EmptyFile:
+  code: EMPTY_FILE
+  level: error
+  reason: empty files not allowed.
+  requires: []
+NoHeader:
+  code: NO_HEADER
+  level: error
+  reason: CSV data files must contain a valid header with at least one column.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+HeaderRowMismatch:
+  code: HEADER_ROW_MISMATCH
+  level: error
+  reason: The header and all rows for CSV data files must contain the same number of columns.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+RowidValuesNotUnique:
+  code: ROWID_VALUES_NOT_UNIQUE
+  level: error
+  reason: Columns within CSV data files with the header "row_id" must contain unique values in every row.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+WrongMetadataLocation:
+  code: WRONG_METADATA_LOCATION
+  level: warning
+  reason: The main metadata file must be located within the root directory
+  requires: []
+KeywordFormattingError:
+  code: KEYWORD_FORMATTING_ERROR
+  level: error
+  reason: |
+    All datafiles must use psych-DS keyword formatting. That is, datafile names must consist of
+    a series of keyword-value pairs, separated by underscores, with keywords using only lowercase
+    alphabetic characters and values using any alphanumeric characters of either case. The file must
+    end with '_data.csv'. In other words, files must follow this regex: 
+    /([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv/
+  requires: []
+UnofficialKeywordWarning:
+  code: UNOFFICIAL_KEYWORD_WARNING
+  level: warning
+  reason: |
+    Although it is not recommended, datafiles are permitted to use keywords other than those provided
+    in the official psych-DS specification. If you do choose to use unofficial keywords, please ensure
+    that they are clearly defined within your research community and used consistently across relevant datasets.
+  requires: []
+UnofficialKeywordError:
+  code: UNOFFICIAL_KEYWORD_ERROR
+  level: error
+  reason: Names for data files must not include keywords other than those listed in the psych-DS schema.
+  requires: []
+InvalidJsonFormatting:
+  code: INVALID_JSON_FORMATTING
+  level: error
+  reason: One of your metadata files in not in valid JSON format.
+  requires: 
+    - rules.files.common.core.dataset_description
+InvalidJsonldFormatting:
+  code: INVALID_JSONLD_FORMATTING
+  level: error
+  reason: Your metadata files are required to follow legal JSON-LD formatting.
+  requires:
+    - rules.files.common.core.dataset_description
+IncorrectDatasetType:
+  code: INCORRECT_DATASET_TYPE
+  level: error
+  reason: Your metadata is missing the required schema.org "Dataset" type
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+MissingDatasetType:
+  code: MISSING_DATASET_TYPE
+  level: error
+  reason: Your metadata is missing the "@type/type" property, which is required.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+UnknownNamespace:
+  code: UNKNOWN_NAMESPACE
+  level: warning
+  reason: |
+    The psych-DS validator only has access to one external vocabulary, "http://schema.org";
+    any other reference to an external schema is permitted, but the validity of the terms used
+    cannot be confirmed.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+ObjectTypeMissing:
+  code: OBJECT_TYPE_MISSING
+  level: warning
+  reason: |
+    For compliance with the schema.org ontology, all objects within the metadata (with a few exceptions)
+    that appear as the value of a schema.org key/property must contain a "@type" key with a valid schema.org type 
+    as its value.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+InvalidSchemaorgProperty:
+  code: INVALID_SCHEMAORG_PROPERTY
+  level: warning
+  reason: |
+     The schema.org ontology contains a fixed set of legal properties which can be applied to objects within the metadata.
+      If schema.org is used as the only @context within your metadata, then all properties will be interpreted as schema.org properties.
+      Using an invalid schema.org property is not considered an error in the psych-DS specification, but it should be understood
+      that such usages result in the property in question not being interpretable by machines.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+InvalidObjectType:
+  code: INVALID_OBJECT_TYPE
+  level: warning
+  reason: |
+    Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values.
+    including an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS,
+    but it will result in the object in question not being interpretable by machines.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+ExtensionMismatch:
+  code: EXTENSION_MISMATCH
+  level: error
+  reason: |
+    Extension used by file does not match allowed extensions for its suffix.
+  requires: []
