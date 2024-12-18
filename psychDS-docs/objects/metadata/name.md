@@ -1,5 +1,8 @@
-# Name
+### Definition:
 
-Value type: string
+Name of the dataset.
 
-Definition: Name of the dataset.
+
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

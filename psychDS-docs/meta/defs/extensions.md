@@ -1,5 +1,7 @@
-# extensions
+### Definition: 
 
-Value type: string
+Extension of current file including initial dot
 
-Definition: Extension of current file including initial dot
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

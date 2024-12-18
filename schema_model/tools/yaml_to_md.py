@@ -56,41 +56,51 @@ def gen_rst(this_file,this_dir,context):
 def gen_rule_doc(key,val,path,context):
     print(context['files'])
     doc = snakemd.new_doc()
-    doc.add_heading('[{key}]({loc} "{desc}")'.format(key=key,loc='/en/latest/Schema Reference/objects/files/{key}'.format(key=key),desc=context['files'][key]['description']))
+    doc.add_heading('[{key}]({loc})'.format(key=key,loc='/en/latest/reference/schema/objects/files/{key}'.format(key=key)))
     doc.add_raw('### Definition:')
     doc.add_paragraph(context['files'][key]['description'])
     doc.add_raw('### Properties:')
-    doc.add_raw('\n'.join(['- [**{prop}**]({loc} "{desc}"): {value}'.format(prop=prop,loc=context['props'][prop]['loc'],desc=context['props'][prop]['description'],value=str(value)) for prop,value in val.items() if prop not in ['code','reason','level','selectors','helpUrl']]))
+    doc.add_raw('| Property | Value | Description |\n|----------|--------|-------------|\n'+'\n'.join(['| [**{prop}**]({loc}) | `{value}` | {desc}'.format(prop=prop,loc=context['props'][prop]['loc'],desc=context['props'][prop]['description'],value=str(value)) for prop,value in val.items() if prop not in ['code','reason','level','selectors','helpUrl']]))
     #if there's a presence/absence error code, display info
     if 'code' in val:
-        doc.add_paragraph('**If file/directory not found**:')
-        doc.add_paragraph('[**code**](/en/latest/Schema Reference/meta/defs/code): {code}'.format(code=val['code']))
-        doc.add_paragraph('[**level**](/en/latest/Schema Reference/meta/defs/level): {level}'.format(level=val['level']))
-        doc.add_paragraph('[**reason**](/en/latest/Schema Reference/meta/defs/reason): {reason}'.format(reason=val['reason']))
+        doc.add_raw('### If object not found:')
+        doc.add_raw('| Property | Value |\n|----------|--------|\n'+
+                    '| [**code**](/en/latest/reference/schema/meta/defs/code) | {code} |\n'.format(code=val['code']) +
+                    '| [**level**](/en/latest/reference/schema/meta/defs/level) | {level} |\n'.format(level=val['level']) +
+                    '| [**reason**](/en/latest/reference/schema/meta/defs/reason) | {reason} |'.format(reason=val['reason']))
     doc.dump(os.path.join(path,key))
 
 #handle conversion of error doc
 def gen_error_doc(key,val,path,context):
     doc = snakemd.new_doc()
-    doc.add_heading(key)
-    doc.add_paragraph('[**code**](/en/latest/Schema Reference/meta/defs/code): {code}'.format(code=val['code']))
-    doc.add_paragraph('[**level**](/en/latest/Schema Reference/meta/defs/level): {level}'.format(level=val['level']))
-    doc.add_paragraph('[**reason**](/en/latest/Schema Reference/meta/defs/reason): {reason}'.format(reason=val['reason']))
+    doc.add_raw('| Property | Value |\n|----------|--------|\n' +
+        '| [**code**](/en/latest/reference/schema/meta/defs/code) | {code} |\n'.format(code=val['code']) +
+        '| [**level**](/en/latest/reference/schema/meta/defs/level) | {level} |\n'.format(level=val['level']) +
+        '| [**reason**](/en/latest/reference/schema/meta/defs/reason) | {reason} |'.format(reason=val['reason']))
     doc.dump(os.path.join(path,key))
 
 #handle conversion of object doc
 def gen_standard_doc(key,val,path,context):
     doc = snakemd.new_doc()
-    doc.add_heading(val['display_name'])
+    doc.add_raw('### Definition:')
+    doc.add_raw('{desc}'.format(desc=val['description']))
+    type_text = ''
+    file_type_text = ''
+
+
     if 'type' in val:
-        doc.add_paragraph('Value type: {val_type}'.format(val_type=val['type']))
+        type_text = '| Value type | `{val_type}` |\n'.format(val_type=val['type'])
     if 'file_type' in val:
         context['files'][key] = {
-            'loc':os.path.join('/en/latest/Schema Reference',path.split('./psychDS-docs')[1],'{key}'.format(key=key)),
+            'loc':os.path.join('/en/latest/reference/schema',path.split('./psychDS-docs')[1],'{key}'.format(key=key)),
             'description':val['description']
         }
-        doc.add_paragraph('File type: {file_type}'.format(file_type=val['file_type']))
-    doc.add_raw('Definition: {desc}'.format(desc=val['description']))
+        file_type_text = '| File type | `{file_type}` |\n'.format(file_type=val['file_type'])
+    doc.add_raw('| Property | Value |\n|----------|--------|\n' +
+                type_text +
+                file_type_text)
+                
+    
     doc.dump(os.path.join(path,key))
     return context
 
@@ -103,10 +113,10 @@ def generate_context(this_yaml,context):
     p1 = doc.add_paragraph(
         this_yaml['context']['description']
     )
-    doc.add_heading('Properties:')
-    doc.add_unordered_list([
-        "[{prop_name}](/en/latest/Schema Reference/meta/defs/{prop_name}): ({value_type}) {description}".format(prop_name=name,value_type=el['type'],description=el['description']) for name, el in this_yaml['context']['properties'].items()
-    ])
+    doc.add_raw('### Properties:')
+    doc.add_raw('| Property | Type | Description |\n|----------|------|-------------|\n' +
+                "\n".join("| [{prop_name}](/en/latest/reference/schema/meta/defs/{prop_name})| `{value_type}` | {description} |".format(prop_name=name,value_type=el['type'],description=el['description']) for name, el in this_yaml['context']['properties'].items()))
+
     doc.dump(os.path.join(docs_dir,'meta/context'))
     pathlib.Path('./psychDS-docs/meta/defs').mkdir(exist_ok=True)
 
@@ -114,21 +124,20 @@ def generate_context(this_yaml,context):
         #collect info on props and store in context dic
         context['props'][name] = {
             'description':prop['description'],
-            'loc':'/en/latest/Schema Reference/meta/defs/{name}'.format(name=name)
+            'loc':'/en/latest/reference/schema/meta/defs/{name}'.format(name=name)
         }
         this_doc = snakemd.new_doc()
+        this_doc.add_raw("### Definition: ")
+        this_doc.add_raw("{desc}".format(desc=prop['description']))
 
-        this_doc.add_heading(name)
-
-        p1 = this_doc.add_paragraph("Value type: {type}".format(type=prop['type']))
-
-        p2 = this_doc.add_paragraph("Definition: {desc}".format(desc=prop['description']))
+        this_doc.add_raw('| Property | Value |\n|----------|--------|\n' +
+                         "| Value type | `{type}` |".format(type=prop['type']))
 
         if 'properties' in prop and name == 'keywords':
-            this_doc.add_heading('Official keywords:')
-            this_doc.add_unordered_list([
-                "**{keyword}**: {description}".format(keyword=keyword,description=el['description']) for keyword,el in prop['properties'].items()
-            ])
+            this_doc.add_raw('### Official keywords:')
+            this_doc.add_raw('| Keyword | Description |\n|----------|--------|\n' +
+                             '\n'.join("| {keyword} | {description} |".format(keyword=keyword,description=el['description']) for keyword,el in prop['properties'].items()))
+            
         
         this_doc.dump(os.path.join(docs_dir,'meta/defs/{name}'.format(name=name)))
     return context

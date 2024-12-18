@@ -1,5 +1,8 @@
-# Funder
+### Definition:
 
-Value type: string
+List of sources of funding (grant numbers).
 
-Definition: List of sources of funding (grant numbers).
+
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

@@ -1,5 +1,7 @@
-# suffix
+### Definition: 
 
-Value type: string
+String following the final '_' in a filename and preceding the '.' of the extension. Used to identify datafiles primarily.
 
-Definition: String following the final '_' in a filename and preceding the '.' of the extension. Used to identify datafiles primarily.
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

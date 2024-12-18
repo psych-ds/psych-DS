@@ -1,5 +1,7 @@
-# path
+### Definition: 
 
-Value type: string
+Full path of the current file
 
-Definition: Full path of the current file
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

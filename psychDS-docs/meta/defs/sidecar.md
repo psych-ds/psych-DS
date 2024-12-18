@@ -1,5 +1,7 @@
-# sidecar
+### Definition: 
 
-Value type: object
+Sidecar metadata constructed via the inheritance principle
 
-Definition: Sidecar metadata constructed via the inheritance principle
+| Property | Value |
+|----------|--------|
+| Value type | `object` |

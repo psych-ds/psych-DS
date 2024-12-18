@@ -1,5 +1,7 @@
-# usesKeywords
+### Definition: 
 
-Value type: boolean
+Indicator for whether a given file object requires keyword formatting.
 
-Definition: Indicator for whether a given file object requires keyword formatting.
+| Property | Value |
+|----------|--------|
+| Value type | `boolean` |

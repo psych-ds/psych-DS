@@ -1,5 +1,8 @@
-# Identifier
+### Definition:
 
-Value type: string
+Identifier that uniquely distinguishes the dataset.
 
-Definition: Identifier that uniquely distinguishes the dataset.
+
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

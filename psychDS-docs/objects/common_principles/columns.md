@@ -1,6 +1,6 @@
-# Columns
+### Definition:
 
-Definition: In general, Psych-DS has minimal restraints and conventions regarding column names. 
+In general, Psych-DS has minimal restraints and conventions regarding column names. 
 We RECOMMEND that you use the controlled keywords defined elsewhere in the standard plus "_id"
 as column names if referring to the relevant information in a dataset. (That is, if you record trials
 with the scope of a given datafile, we RECOMMEND that the name of the column identifying the trial
@@ -15,3 +15,7 @@ in the README for your project.
 
 If you have a column that uniquely identifies each single row of a dataset explicitly it SHOULD be named
 "row_id". A column named "row_id" MUST contain unique values in every row.
+
+
+| Property | Value |
+|----------|--------|

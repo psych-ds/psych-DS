@@ -1,5 +1,9 @@
-# JavaScript Object Notation
+### Definition:
 
-Definition: A JSON file.
+A JSON file.
 
 Top-level and collated metadata files are all stored in the JSON format in psych-DS.
+
+
+| Property | Value |
+|----------|--------|

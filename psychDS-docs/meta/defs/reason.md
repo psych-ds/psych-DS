@@ -1,5 +1,7 @@
-# reason
+### Definition: 
 
-Value type: string
+Paragraph accompanying an error/warning that provides context for what may cause it.
 
-Definition: Paragraph accompanying an error/warning that provides context for what may cause it.
+| Property | Value |
+|----------|--------|
+| Value type | `string` |
