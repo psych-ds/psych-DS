@@ -40,6 +40,15 @@ Datafile: # name of the object to look for, in this case a canonical data file
 
 ## Running scripts
 
+To create a new version of the schema and push it to develop:
+
+- Add a new directory under `/versions` and iterate the version number as you see fit (e.g. `X.Y.Z`)
+- Then:
+```bash
+source pyenv/bin/activate
+bash .update.sh <version_number>
+```
+
 To create a JSON file out of a given version of the schema:
 ```bash
 source pyenv/bin/activate
