@@ -141,4 +141,10 @@ context:
           name: Description
           description: Label describing the data file in question
           type: string
+    troubleshooting:
+      description: Specific troubleshooting instructions to display for a given error/warning
+      type: string
+    noRepeatColumns:
+      type: boolean
+      description: A datafile cannot have duplicate header names.
         
