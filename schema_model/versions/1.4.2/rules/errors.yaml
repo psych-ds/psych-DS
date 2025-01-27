@@ -228,5 +228,7 @@ CSVHeaderRepeated
   code: CSV_HEADER_REPEATED
   level: error
   reason: Duplicate CSV header names can not be duplicate. 
-  requires: []
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
   helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/CSVHeaderRepeated/
