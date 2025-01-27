@@ -224,3 +224,9 @@ ExtensionMismatch:
     Extension used by file does not match allowed extensions for its suffix.
   requires: []
   helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/ExtensionMismatch/
+CSVHeaderRepeated
+  code: CSV_HEADER_REPEATED
+  level: error
+  reason: Duplicate CSV header names can not be duplicate. 
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/CSVHeaderRepeated/
