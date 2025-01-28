@@ -17,6 +17,21 @@ A CSV file under the /data directory in which the official psych-DS compliant da
 | [**usesKeywords**](/en/latest/reference/schema/meta/defs/usesKeywords) | `True` | Indicator for whether a given file object requires keyword formatting.
 | [**nonCanonicalKeywordsAllowed**](/en/latest/reference/schema/meta/defs/nonCanonicalKeywordsAllowed) | `True` | Indicator for whether a given file object is required to use only official Psych-DS keywords
 | [**fileRegex**](/en/latest/reference/schema/meta/defs/fileRegex) | `([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv` | Regular expression defining the legal formatting of a filename.
+| [**troubleshooting**](/en/latest/reference/schema/meta/defs/troubleshooting) | `To resolve this error, make sure that your "data" directory contains at least one file that conforms to the proper naming conventions for Psych-DS datafiles. This means that the filename is composed of a sequence of key-value pairs called "keywords", separated by underscores, and ends with the sequence "_data.csv". Psych-DS provides a set of standard [keyword keys](../schema/meta/defs/keywords/) to use, such as "**subject**" and "**session**", but custom keys are allowed, as long as they don't contain any numbers or special characters and provided that they are clearly defined and used in a consistent manner. 
+
+  For reference, here are some valid datafile names:
+
+  
+  subject-XYZ_session-2_data.csv
+  study-ExampleStudy_data.csv
+  study-ExampleStudy_condition-2_data.csv
+
+  and here are some invalid names:
+
+  data.csv
+  subject-XYZ_data2.csv
+  condition1-A_condition2-C_data.csv
+  subject-XYZ.csv` | Specific troubleshooting instructions to display for a given error/warning
 
 ### If object not found:
 

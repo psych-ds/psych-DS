@@ -31,3 +31,5 @@ The context defines the vocabulary of properties that objects and rules within t
 | [json](/en/latest/reference/schema/meta/defs/json)| `object` | Contents of the current JSON file |
 | [requires](/en/latest/reference/schema/meta/defs/requires)| `array` | Set of schema locations defining the objects that must be present for certain issues to be reported |
 | [keywords](/en/latest/reference/schema/meta/defs/keywords)| `array` | List of key-value pairings associated with the data file, derived from the filename |
+| [troubleshooting](/en/latest/reference/schema/meta/defs/troubleshooting)| `string` | Specific troubleshooting instructions to display for a given error/warning |
+| [noRepeatColumns](/en/latest/reference/schema/meta/defs/noRepeatColumns)| `boolean` | A datafile cannot have duplicate header names. |
