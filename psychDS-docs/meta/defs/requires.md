@@ -1,5 +1,7 @@
-# requires
+### Definition: 
 
-Value type: array
+Set of schema locations defining the objects that must be present for certain issues to be reported
 
-Definition: Set of schema locations defining the objects that must be present for certain issues to be reported
+| Property | Value |
+|----------|--------|
+| Value type | `array` |

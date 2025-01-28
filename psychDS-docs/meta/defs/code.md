@@ -1,5 +1,7 @@
-# code
+### Definition: 
 
-Value type: string
+Unique code identifying a specific error/warning
 
-Definition: Unique code identifying a specific error/warning
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

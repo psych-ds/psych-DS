@@ -1,6 +1,6 @@
-# Keywords
+### Definition:
 
-Definition: A set of identifying key-value duples associated with a given data file.
+A set of identifying key-value duples associated with a given data file.
 Keys are limited to a vocabulary of:
   - study
   - site
@@ -11,3 +11,7 @@ Keys are limited to a vocabulary of:
   - trial
   - stimulus
   - description
+
+
+| Property | Value |
+|----------|--------|

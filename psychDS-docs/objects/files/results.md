@@ -1,5 +1,7 @@
-# Results
+### Definition:
 
-File type: directory
+A directory in which to store any results generated using the data in /data.
 
-Definition: A directory in which to store any results generated using the data in /data.
+| Property | Value |
+|----------|--------|
+| File type | `directory` |

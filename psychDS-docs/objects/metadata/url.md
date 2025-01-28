@@ -1,5 +1,8 @@
-# URL
+### Definition:
 
-Value type: string
+Canonical source for the dataset.
 
-Definition: Canonical source for the dataset.
+
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

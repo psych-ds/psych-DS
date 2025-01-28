@@ -1,5 +1,7 @@
-# fileRegex
+### Definition: 
 
-Value type: regular expression
+Regular expression defining the legal formatting of a filename.
 
-Definition: Regular expression defining the legal formatting of a filename.
+| Property | Value |
+|----------|--------|
+| Value type | `regular expression` |

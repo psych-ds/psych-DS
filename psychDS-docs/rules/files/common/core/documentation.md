@@ -1,4 +1,4 @@
-# [documentation](/en/latest/Schema Reference/objects/files/documentation "A directory in which to store any project-related documentation that is used for conducting the study \(e.g. consent forms\)")
+# [documentation](/en/latest/reference/schema/objects/files/documentation)
 
 ### Definition:
 
@@ -6,13 +6,15 @@ A directory in which to store any project-related documentation that is used for
 
 ### Properties:
 
-- [**path**](/en/latest/Schema Reference/meta/defs/path "Full path of the current file"): /documentation
-- [**directory**](/en/latest/Schema Reference/meta/defs/directory "Indicator for whether a given object is expected to be a directory or a file."): True
+| Property | Value | Description |
+|----------|--------|-------------|
+| [**path**](/en/latest/reference/schema/meta/defs/path) | `/documentation` | Full path of the current file
+| [**directory**](/en/latest/reference/schema/meta/defs/directory) | `True` | Indicator for whether a given object is expected to be a directory or a file.
 
-**If file/directory not found**:
+### If object not found:
 
-[**code**](/en/latest/Schema Reference/meta/defs/code): MISSING_DOCUMENTATION_DIRECTORY
-
-[**level**](/en/latest/Schema Reference/meta/defs/level): warning
-
-[**reason**](/en/latest/Schema Reference/meta/defs/reason): It is recommended to include subdirectory named 'documentation' in the base directory
+| Property | Value |
+|----------|--------|
+| [**code**](/en/latest/reference/schema/meta/defs/code) | MISSING_DOCUMENTATION_DIRECTORY |
+| [**level**](/en/latest/reference/schema/meta/defs/level) | warning |
+| [**reason**](/en/latest/reference/schema/meta/defs/reason) | It is recommended to include subdirectory named 'documentation' in the base directory |

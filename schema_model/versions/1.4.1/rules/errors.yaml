@@ -1,0 +1,226 @@
+JsonInvalid:
+  code: JSON_INVALID
+  reason: |
+    Not a valid JSON file. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  level: error
+  selectors:
+    - extension == ".json"
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/JsonInvalid/
+FileNotRead:
+  code: FILE_NOT_READ
+  reason: |
+    We were unable to read this file. Make sure it contains data (file size > 0 kB) and is not corrupted, incorrectly named, or incorrectly symlinked.
+  level: error
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/FileNotRead/
+FileEmpty:
+  code: FILE_EMPTY
+  reason: |
+    Empty files are not allowed. This typically occurs due to a problem creating or downloading a file.
+  level: warning
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/FileEmpty/
+JsonEncodingError:
+  code: JSON_ENCODING_ERROR
+  reason: |
+    JSON files must be valid utf-8. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  level: error
+  selectors:
+    - extension == ".json"
+  requires: 
+    - rules.files.common.core.dataset_description
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/JsonEncodingError/
+JsonKeyRequired:
+  code: JSON_KEY_REQUIRED
+  level: error
+  reason: The metadata object listed below is missing a required key.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/JsonKeyRequired/
+  troubleshooting: |
+    If you look at your metadata file and can see that any of the required fields are missing, make sure to add them and provide appropriate, informative values for them. If you do seem to have these fields already, then there may be an issue with your `@context` field, which should contain the standard namespace for Psych-DS metadata, `https://schema.org/`. We include this value because rich metadata objects should have fields that are not just arbitrary strings, but publicly available terms with conventional definitions. In the process of loading a JSON-LD object, every field is attached to the end of the namespace, so the full name for `description` is `https://schema.org/description`, which is a real webpage that you can visit, where you'll see a description of what a `description` is!
+JsonKeyRecommended:
+  code: JSON_KEY_RECOMMENDED
+  level: warning,
+  reason: The metadata object listed below is missing a recommended key.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/JsonKeyRecommended/
+CsvColumnMissingFromMetadata: 
+  code: CSV_COLUMN_MISSING_FROM_METADATA
+  level: error
+  reason: There is a column name in your CSV data that is not listed in the "variableMeasured" property in your metadata file. The missing column names are shown below.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/CsvColumnMissingFromMetadata/
+  troubleshooting: |
+    The simplest way to solve this error is to replace your `variableMeasured` field with the suggested one that the validator generates when this error occurs. If you want to create a rich, informative dataset, though, the best way to solve this issue is to take some time to create a full data dictionary for your dataset. This involves taking a look through all of your data files and compiling detailed definitions of every column that you collect data for, and compiling those definitions into rich `PropertyValue` objects. For instance, here's a `PropertyValue` object for a column header like `Response Time`.
+
+    {
+        "@type": "PropertyValue",
+        "name": "Response Time",
+        "description": "The time (in ms) that elapses between the onset of the stimulus and the participant response",
+        "unitText": "ms",
+    }
+FileNotChecked:
+  code: FILE_NOT_CHECKED
+  level: warning
+  reason: |
+    The files listed below are not covered by the psych-DS specification, so they will be ignored for all further validation. Under the rules of psych-DS, non-specified files are allowed to be included, but if you would like to avoid receiving this warning moving forward, you can include in your ".psychdsignore" file.
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/FileNotChecked/
+MissingRequiredElement:
+  code: MISSING_REQUIRED_ELEMENT
+  level: error
+  reason: Your dataset is missing an element that is required under the psych-DS specification.
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/MissingRequiredElement/
+CSVHeaderMissing:
+  code: CSV_HEADER_MISSING
+  level: error
+  reason: CSV data files must contain a valid header with at least one column.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/CSVHeaderMissing/
+CSVFormattingError:
+  code: CSV_FORMATTING_ERROR
+  level: error
+  reason: CSV data files must be parsable as valid CSV formatting. If you are having trouble creating CSV files or converting your existing data files to CSV, try visiting https://flatfile.com/blog/what-is-a-csv-file-guide-to-uses-and-benefits/
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/CSVFormattingError/
+  troubleshooting: |
+    To resolve these error, there are a few approaches you might take:
+    - Open your data file in a text editor and confirm that it has at least one line of text. This should be a row of "column headers" that describe the data to be stored in each column. Headers should be separated by commas (`,`).
+    - Confirm that all rows have the same number of columns. In general, this means that each row should have the same number of columns, but this is not strictly the case. Cells in a given row can contain a comma that isn't intended as a [delimiter](https://www.ninjaone.com/it-hub/it-service-management/what-is-a-delimiter/#:~:text=A%20delimiter%20is%20a%20sequence,sequence%20of%20comma%2Dseparated%20values.) (for instance, if one column is used to store an open text response, which may contain commas), but any cell containing non-delimiter commas must be surrounded by double quotes. For example, this is a valid csv:
+        `subject,text response
+        A123,"I am a CSV, and this is okay"`
+    - Confirm that there are no empty lines in your CSV file.
+    - Confirm that all opening double quotes have a corresponding closing double quote.
+CSVHeaderLengthMismatch:
+  code: CSV_HEADER_LENGTH_MISMATCH
+  level: error
+  reason: The header and all rows for CSV data files must contain the same number of columns. If you are having trouble creating CSV files or converting your existing data files to CSV, try visiting https://flatfile.com/blog/what-is-a-csv-file-guide-to-uses-and-benefits/
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/CSVHeaderLengthMismatch/
+RowidValuesNotUnique:
+  code: ROWID_VALUES_NOT_UNIQUE
+  level: error
+  reason: Columns within CSV data files with the header "row_id" must contain unique values in every row.
+  requires: 
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/RowidValuesNotUnique/
+  troubleshooting: |
+    If you've chosen to use `row_id` as one of your column header, make sure to go through the columns and confirm that no values are repeated at any point. If you happened to be using the header `row_id` for your own purposes and don't wish to change it, you'll need to rename the header to something different. One easy way to check if your `row_id` column has all unique values is to open the file in a spreadsheet program like excel and use something like a pivot table or a formula to detect repeat values.
+WrongMetadataLocation:
+  code: WRONG_METADATA_LOCATION
+  level: warning
+  reason: The main metadata file (dataset_description.json) is expected to be found at the root of your project directory, at the same level as your data/ subdirectory. A file with this name was found in the locations listed below.
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/WrongMetadataLocation/
+FilenameKeywordFormattingError:
+  code: FILENAME_KEYWORD_FORMATTING_ERROR
+  level: error
+  reason: |
+    All datafiles must use psych-DS keyword formatting. That is, datafile names must consist of a series of keyword-value pairs, separated by underscores, with keywords using only lowercase alphabetic characters and values using any alphanumeric characters of either case. A keyword-value pair would look something like this: "subject-123a", where "subject" is the keyword and "123a" is the value. The file must end with '_data.csv'. An example file might look like this: "subject-123a_session-2_data.csv". This filename has two keyword-value pairs, separated by an underscore, the "_data" suffix, and the ".csv" extension. In other words, files must follow this regex: /([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv/
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/FilenameKeywordFormattingError/
+  troubleshooting: |
+    One easy way to check the validity of your filenames is to use this [regular expression (regex) validator](https://regex101.com/). A regular expression is a special way of describing patterns of characters. The regular expression for Psych-DS datafiles is `([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv`, so if you input this to the regex validator, and then put your filename as a test string, the validator will tell you whether it follows the regex pattern.
+FilenameUnofficialKeywordWarning:
+  code: FILENAME_UNOFFICIAL_KEYWORD_WARNING
+  level: warning
+  reason: |
+    Although it is not recommended, datafiles are permitted to use keywords other than those provided in the official psych-DS specification. If you do choose to use unofficial keywords, please ensure that they are clearly defined within your research community and used consistently across relevant datasets.
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/FilenameUnofficialKeywordWarning/
+FilenameUnofficialKeywordError:
+  code: FILENAME_UNOFFICIAL_KEYWORD_ERROR
+  level: error
+  reason: Names for data files must not include keywords other than those listed in the psych-DS schema.
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/FilenameUnofficialKeywordWarning/
+InvalidJsonFormatting:
+  code: INVALID_JSON_FORMATTING
+  level: error
+  reason: One of your metadata files in not in valid JSON format. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/InvalidJsonFormatting/
+  troubleshooting: |
+    To check what's wrong with your JSON file, you can could paste it into [a validator like this](https://jsonlint.com/), which should output the specific error in question. Often, the issue is caused by something simple, like a missing comma between elements, or a missing close bracket at the end of the file.
+InvalidJsonldFormatting:
+  code: INVALID_JSONLD_FORMATTING
+  level: error
+  reason: Your metadata files are required to follow legal JSON-LD formatting. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires:
+    - rules.files.common.core.dataset_description
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/InvalidJsonldFormatting/
+  troubleshooting: |
+    To get feedback on whether your file violates any JSON-LD rules, just input it into [this JSON-LD validator/converter](https://json-ld.org/playground/) and follow any suggestions for how to fix it. Typically, this error will only occur if you are attempting to use some of JSON-LD's more complex elements.
+IncorrectDatasetType:
+  code: INCORRECT_DATASET_TYPE
+  level: error
+  reason: Your metadata is missing the required schema.org "Dataset" type. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/IncorrectDatasetType/
+  troubleshooting: |
+    You can resolve these errors by making sure that you have a `@type` field in your metadata file with `Dataset` or `https://schema.org/Dataset` as its value. You should also make sure that you have a `@context` field with `https://schema.org/` at its value.
+MissingDatasetType:
+  code: MISSING_DATASET_TYPE
+  level: error
+  reason: Your metadata is missing the "@type/type" property, which is required. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/MissingDatasetType/
+UnknownNamespace:
+  code: UNKNOWN_NAMESPACE
+  level: warning
+  reason: |
+    The psych-DS validator only has access to one external vocabulary, "http://schema.org"; any other reference to an external schema is permitted, but the validity of the terms used cannot be confirmed. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/UnknownNamespace/
+ObjectTypeMissing:
+  code: OBJECT_TYPE_MISSING
+  level: warning
+  reason: |
+    For compliance with the schema.org ontology, all objects within the metadata (with a few exceptions) that appear as the value of a schema.org key/property must contain a "@type" key with a valid schema.org type as its value. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/ObjectTypeMissing/
+InvalidSchemaorgProperty:
+  code: INVALID_SCHEMAORG_PROPERTY
+  level: warning
+  reason: |
+     The schema.org ontology contains a fixed set of legal properties which can be applied to objects within the metadata. If schema.org is used as the only @context within your metadata, then all properties will be interpreted as schema.org properties. Using an invalid schema.org property is not considered an error in the psych-DS specification, but it should be understood that such usages result in the property in question not being interpretable by machines. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/InvalidSchemaorgProperty/
+InvalidObjectType:
+  code: INVALID_OBJECT_TYPE
+  level: warning
+  reason: |
+    Properties in the schema.org ontology have selective restrictions on which types of objects can be used for their values. Including an object with a @type that does not match the selective restrictions of its property is not an error in psych-DS, but it will result in the object in question not being interpretable by machines. If you are having trouble creating your dataset_description.json file, you can download a template by filling out the form at https://psych-ds.github.io/cedar-wizard-psychds/.
+  requires: 
+    - rules.files.common.core.dataset_description
+    - rules.files.tabular_data.data.Datafile
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/InvalidObjectType/
+ExtensionMismatch:
+  code: EXTENSION_MISMATCH
+  level: error
+  reason: |
+    Extension used by file does not match allowed extensions for its suffix.
+  requires: []
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/errors/ExtensionMismatch/

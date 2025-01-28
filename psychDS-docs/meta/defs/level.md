@@ -1,5 +1,7 @@
-# level
+### Definition: 
 
-Value type: string
+Property describing the severity of a rule, which determines whether it produces an error, warning, etc.
 
-Definition: Property describing the severity of a rule, which determines whether it produces an error, warning, etc.
+| Property | Value |
+|----------|--------|
+| Value type | `string` |

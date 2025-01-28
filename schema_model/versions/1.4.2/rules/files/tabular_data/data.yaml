@@ -1,0 +1,31 @@
+Datafile:
+  requires: data
+  suffix: "data"
+  extensions:
+    - ".csv"
+  baseDir: "data"
+  arbitraryNesting: true
+  columnsMatchMetadata: true
+  usesKeywords: true
+  nonCanonicalKeywordsAllowed: true
+  fileRegex: '([a-z]+-[a-zA-Z0-9]+)(_[a-z]+-[a-zA-Z0-9]+)*_data\.csv'
+  code: "MISSING_DATAFILE"
+  level: error
+  reason: "No CSV files were found in the data subdirectory (or all of the CSV files found there had a problem - see other error messages.) There must be at least one valid csv datafile under the data/ subdirectory."
+  helpUrl: https://psychds-docs.readthedocs.io/en/latest/reference/schema/rules/files/tabular_data/data/Datafile/
+  troubleshooting: |
+    To resolve this error, make sure that your "data" directory contains at least one file that conforms to the proper naming conventions for Psych-DS datafiles. This means that the filename is composed of a sequence of key-value pairs called "keywords", separated by underscores, and ends with the sequence "_data.csv". Psych-DS provides a set of standard [keyword keys](../schema/meta/defs/keywords/) to use, such as "**subject**" and "**session**", but custom keys are allowed, as long as they don't contain any numbers or special characters and provided that they are clearly defined and used in a consistent manner. 
+
+      For reference, here are some valid datafile names:
+
+      
+      subject-XYZ_session-2_data.csv
+      study-ExampleStudy_data.csv
+      study-ExampleStudy_condition-2_data.csv
+
+      and here are some invalid names:
+
+      data.csv
+      subject-XYZ_data2.csv
+      condition1-A_condition2-C_data.csv
+      subject-XYZ.csv

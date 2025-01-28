@@ -1,6 +1,6 @@
-# Inheritance
+### Definition:
 
-Definition: In addition to the mandatory "dataset_description.json" file at the root of the dataset,
+In addition to the mandatory "dataset_description.json" file at the root of the dataset,
 Psych-DS allows for the inclusion of additional metadata files, whose fields apply to 
 specific subsets of the data. There are two types of inherited metadata:
 
@@ -47,3 +47,6 @@ and there is no merging processed involved. For instance, if the root metadata f
 property with 10 elements, and a lower level metadata file contains a "variableMeasured" property with
 5 elements, the resulting inherited object will only contain the 5 "variableMeasured" elements
 from the inherited metadata. The lists are not combined in any way, but replaced.
+
+| Property | Value |
+|----------|--------|
