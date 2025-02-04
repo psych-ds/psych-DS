@@ -323,8 +323,8 @@
                 "file_type": "regular",
                 "description": "Human-readable file describing the project and dataset in detail. This is an OPTIONAL file, and only one README file should appear in dataset."
             },
-            "psychdsignore": {
-                "display_name": "psychdsignore",
+            "psychds-ignore": {
+                "display_name": "psychds-ignore",
                 "file_type": "regular",
                 "description": "List of files and gitignore expressions describing which files in the directory should be ignored by the Psych-DS validator."
             },
@@ -495,11 +495,11 @@
                         "reason": "It is recommended to include subdirectory named 'documentation' in the base directory",
                         "helpUrl": "https://psychds-docs.readthedocs.io/en/docs_mods/reference/schema/rules/files/common/core/documentation/"
                     },
-                    "psychdsignore": {
+                    "psychds-ignore": {
                         "level": "warning",
-                        "path": "/.psychdsignore",
+                        "path": "/.psychds-ignore",
                         "code": "MISSING_PSYCHDSIGNORE",
-                        "reason": "It is recommended to include a file called '.psychdsignore' in the base directory to indicate files/directories that the validator process should ignore.",
+                        "reason": "It is recommended to include a file called '.psychds-ignore' in the base directory to indicate files/directories that the validator process should ignore.",
                         "helpUrl": "https://psychds-docs.readthedocs.io/en/docs_mods/reference/schema/rules/files/common/core/psychdsignore/"
                     }
                 }
