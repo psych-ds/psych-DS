@@ -1,8 +1,8 @@
 # Psych-DS Schema Model
 
-This repository contains the [LinkML](https://linkml.io/) schema model Psych-DS, which serves as the source of ground truth for what constitutes a valid Psych-DS dataset. The schema model is employed by our validator tools as a reference for all rules and objects to check for. The repository also contains python scripts for generating consolidated JSON representations of the schema model as well as generating markdown documents that correspond to the various YAML files that constitute the schema.
+This repository contains the custom YAML schema model Psych-DS, which serves as the source of ground truth for what constitutes a valid Psych-DS dataset. The schema model is employed by our validator tools as a reference for all rules and objects to check for. The repository also contains python scripts for generating consolidated JSON representations of the schema model as well as generating markdown documents that correspond to the various YAML files that constitute the schema.
 
-For a detailed overview of the LinkML framework and our schema model structure, check out [this page](https://psychds-docs.readthedocs.io/en/latest/reference/schema/schema_overview/) of our docs website.
+For a detailed overview of our schema model structure, check out [this page](https://psychds-docs.readthedocs.io/en/latest/reference/schema/schema_overview/) of our docs website.
 
 
 ## Repository Structure
