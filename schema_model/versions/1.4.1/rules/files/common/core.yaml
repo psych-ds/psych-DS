@@ -12,6 +12,8 @@ dataset_description:
   code: "MISSING_DATASET_DESCRIPTION"
   reason: "It is required to include a 'dataset_description.json' in the base directory"
   helpUrl: https://psychds-docs.readthedocs.io/en/docs_mods/reference/schema/rules/files/common/core/dataset_description/
+  troubleshooting:  |
+    To resolve this error, create a text file named `dataset_description.json` in the folder that you submit to the validator. If this file is present but its contents are not valid, then you will encounter other errors to help you fill it with the proper contents.
 README:
   level: warning
   baseDir: /
@@ -42,6 +44,8 @@ data:
   code: "MISSING_DATA_DIRECTORY"
   reason: "It is required to include a subdirectory named 'data' in the base directory"
   helpUrl: https://psychds-docs.readthedocs.io/en/docs_mods/reference/schema/rules/files/common/core/data/
+  troubleshooting: |
+    To resolve this error, create a folder (or rename an existing folder) with the name `data` within the folder that you submit to the validator, and subsequent errors will instruct you how to properly fill it.
 analysis:
   level: warning
   path: /analysis
