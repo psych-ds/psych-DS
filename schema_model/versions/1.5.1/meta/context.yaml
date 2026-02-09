@@ -1,0 +1,150 @@
+#
+# The context provides the namespaces available to rules.
+# These namespaces are used by selectors to define the scope of application
+# for a rule, as well as assertions, to determine whether the rule is satisfied.
+#
+# The dataset namespace is constructed once and is available when visiting all
+# files.
+#
+# All other (current) namespaces are defined on individual files.
+# Sidecar metadata and file associations are built according to the inheritance
+# principle.
+#
+context:
+  type: object
+  description: The context defines the vocabulary of properties that objects and rules within the schema can use.
+  properties:
+    schema:
+      description: The psych-DS schema
+      type: object
+    dataset:
+      description: Properties and contents of the entire dataset
+      type: object
+      properties:
+        dataset_description:
+          description: Contents of /dataset_description.json
+          type: object
+        files:
+          description: List of all files in dataset
+          type: array
+        tree:
+          description: Tree view of all files in dataset
+          type: object
+        ignored:
+          description: Set of ignored files
+          type: array
+    path:
+      description: Full path of the current file
+      type: string
+    suffix:
+      description: String following the final '_' in a filename and preceding the '.' of the extension. Used to identify datafiles primarily.
+      type: string
+    extensions:
+      description: Extension of current file including initial dot
+      type: string
+    stem:
+      type: string
+      description: Portion of the filename which excludes the extension. 
+    level:
+      type: string
+      description: Property describing the severity of a rule, which determines whether it produces an error, warning, etc.
+    code: 
+      type: string
+      description: Unique code identifying a specific error/warning 
+    reason:
+      type: string
+      description: Paragraph accompanying an error/warning that provides context for what may cause it.
+    directory:
+      type: boolean
+      description: Indicator for whether a given object is expected to be a directory or a file.
+    arbitraryNesting:
+      type: boolean
+      description: Indicator for whether a given file object is allowed to be nested within an arbitrary number of subdirectories.
+    usesKeywords:
+      type: boolean
+      description: Indicator for whether a given file object requires keyword formatting.
+    nonCanonicalKeywordsAllowed:
+      type: boolean
+      description: Indicator for whether a given file object is required to use only official Psych-DS keywords
+    fileRegex:
+      type: regular expression
+      description: Regular expression defining the legal formatting of a filename.
+    baseDir:
+      type: string
+      description: Name of the directory under which the file object is expected to appear.
+    fields:
+      type: object
+      description: Set of key/value pairs defining the fields that are expected to occur in a given file object, and whether they are required or recommended.
+    namespace:
+      type: string
+      description: URL identifying the required namespace to be used for required fields in the file object. Namespaces are web prefixes that point to ontologies which contain definitions of semantic vocabularies.
+    jsonld:
+      type: boolean
+      description: Indicator for whether the given file object is required to be a valid JSON-LD object.
+    containsAllColumns:
+      type: boolean
+      description: The metadata object, after all inherited sidecars are accounted for, must contain a 'variableMeasured' property listing at least all of the column headers found in the datafile at hand.
+    columnsMatchMetadata:
+      type: boolean
+      description: Each datafile must only use column headers that appear in the 'variableMeasured' property of the compiled metadata object that corresponds to it.
+    sidecar:
+      description: Sidecar metadata constructed via the inheritance principle
+      type: object
+    columns:
+      description: CSV columns, indexed by column header, values are arrays with column contents
+      type: object
+      additionalProperties:
+        type: array
+    json:
+      description: Contents of the current JSON file
+      type: object
+    requires:
+      type: array
+      description: Set of schema locations defining the objects that must be present for certain issues to be reported
+    keywords:
+      description: List of key-value pairings associated with the data file, derived from the filename
+      type: array
+      properties:
+        study:
+          name: Study
+          description: Label designating a given study
+          type: string
+        site:
+          name: Site
+          description: Label designating the site where the data was collected
+          type: string
+        subject:
+          name: Subject
+          description: Label designating the subject corresponding to the data in the file
+          type: string
+        session:
+          name: Session
+          description: Label designating a given session of the study
+          type: string
+        task:
+          name: Task
+          description: Label designating the type of task in which the data was collected
+          type: string
+        condition:
+          name: Condition
+          description: Label designating the condition under which the data was collected
+          type: string
+        trial:
+          name: Trial
+          description: Label designating the trial associated with the data
+          type: string
+        stimulus:
+          name: Stimulus
+          description: Label designating the stimulus item associated with the data
+          type: string
+        description:
+          name: Description
+          description: Label describing the data file in question
+          type: string
+    troubleshooting:
+      description: Specific troubleshooting instructions to display for a given error/warning
+      type: string
+    noRepeatColumns:
+      type: boolean
+      description: A datafile cannot have duplicate header names.
+        
