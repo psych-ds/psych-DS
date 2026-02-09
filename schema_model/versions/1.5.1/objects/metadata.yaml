@@ -1,0 +1,79 @@
+# This file defines valid psych-DS metadata fields.
+# These definitions include the field names, their descriptions, and valid values.
+# This file **does not** define how and when metadata fields can be used with a given file.
+name:
+  name: name
+  display_name: Name
+  description: |
+    Name of the dataset.
+  type: string
+schemaVersion:
+  name: schemaVersion
+  display_name: Schema Version
+  description: |
+    The version of the data specification that this dataset conforms to.
+  type: string
+description:
+  name: description
+  display_name: Description
+  description: |
+    Detailed description of the dataset.
+  type: string
+variableMeasured:
+  name: variableMeasured
+  display_name: Variable Measured
+  description: |
+    List of the column names that appear in the data files.
+  type: array
+author:
+  name: author
+  display_name: Author
+  description: |
+    List of individuals who contributed to the creation/curation of the dataset.
+  type: array
+  items:
+    type: string
+citation:
+  name: citation
+  display_name: Citation
+  description: |
+    Citation data for referencing the dataset, or URL/path for structured citation file.
+  type: string
+license:
+  name: license
+  display_name: Kucebse
+  description: |
+    Author-assigned 'license' for data/material use. While this can be a string of text, 
+    a URL pointing to a specific license file (online or in the project directory) is preferred.
+  type: string
+funder:
+  name: funder
+  display_name: Funder
+  description: |
+    List of sources of funding (grant numbers).
+  type: string
+url:
+  name: url
+  display_name: URL
+  description: |
+    Canonical source for the dataset.
+  type: string
+identifier:
+  name: identifier
+  display_name: Identifier
+  description: |
+    Identifier that uniquely distinguishes the dataset.
+  type: string
+usageInfo:
+  name: usageInfo
+  display_name: Privacy Policy
+  description: |
+    A string to indicate whether any of the values in the dataset are desired to be shareable.
+    This does not guarantee that the dataset HAS been shared or HAS been de identified,.
+  type: string
+keywords:
+  name: keywords
+  display_name: Keywords
+  description: |
+    Keywords with which to tag the dataset for reference.
+  type: array
